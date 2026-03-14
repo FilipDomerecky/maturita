@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Master – Sítě</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../index.html" class="active">Sítě</a>
+            <a href="../../kyberbezpecnost/index.html">Kyberbezpečnost</a>
+        </nav>
+        <a class="user"><img src="../../assets/main/user.png" width="24" height="24" alt=""></a>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Sítě</a>
+                <span>/</span>
+                <span class="task-name">Port Master</span>
+            </nav>
+
+            <h1>Port Master</h1>
+            <p class="task-desc">Poznáš, který port patří které službě?</p>
+            <h3 class="task-difficulty easy">Lehká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">kvíz</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">doplň porty</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">napiš číslo portu</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <p>
+                        Když počítač komunikuje po síti, musí druhá strana vědět, <strong>které aplikaci</strong> mají data
+                        doručit. Na jednom zařízení může běžet víc služeb najednou např. webový server, e-mail, SSH.
+                        Právě k rozlišení slouží <strong>porty</strong>: čísla od 0 do 65535, která identifikují konkrétní
+                        službu na daném zařízení. Adresa tedy není jen IP, ale pár <em>IP adresa : port</em>
+                        (např. 192.168.1.1:80).
+                    </p>
+
+                    <h3>Kolik portů může být?</h3>
+                    <p>
+                        Port je 16bitové číslo, takže existuje <strong>65 536 portů</strong> (0–65535). Dělí se na tři
+                        rozsahy: <strong>0–1023</strong> jsou rezervované pro známé služby (web, e-mail, SSH…),
+                        <strong>1024–49151</strong> jsou registrované pro další aplikace, <strong>49152–65535</strong>
+                        slouží jako dočasné (dynamické) porty pro odchozí spojení klientů.
+                    </p>
+
+                    <h3>Nejznámější porty a služby</h3>
+                    <p>
+                        Některé porty jsou natolik běžné, že je dobré je znát. Souvisí s protokoly z předchozí lekce:
+                    </p>
+                    <ul>
+                        <li><strong>80</strong> — HTTP (nešifrovaný přenos webových stránek)</li>
+                        <li><strong>443</strong> — HTTPS (zabezpečený přenos webových stránek)</li>
+                        <li><strong>21</strong> — FTP (přenos souborů)</li>
+                        <li><strong>22</strong> — SSH (zabezpečené přihlášení a ovládání na dálku)</li>
+                        <li><strong>53</strong> — DNS (převod doménových jmen na IP adresy)</li>
+                        <li><strong>67, 68</strong> — DHCP (automatické přidělování IP adres)</li>
+                        <li><strong>25, 587</strong> — SMTP (odesílání e-mailů)</li>
+                        <li><strong>143, 993</strong> — IMAP (přístup k e-mailům na serveru)</li>
+                        <li><strong>110, 995</strong> — POP3 (stažení e-mailů ze serveru)</li>
+                    </ul>
+
+                    <p>
+                        V prohlížeči většinou port neuvidíš — u HTTPS se předpokládá port 443 a u HTTP port 80,
+                        takže se neuvádí. Když ale napíšeš např. <code>https://example.com:8443</code>, říkáš tím
+                        „připoj se na port 8443“ (často se tak používá alternativní port pro HTTPS).
+                    </p>
+
+                    <h3>Porty a bezpečnost</h3>
+                    <p>
+                        Firewall nebo router může <strong>otevírat nebo blokovat</strong> konkrétní porty. Služba
+                        naslouchá na daném portu; pokud je port zavřený, z internetu na ni nikdo nedosáhne. Zbytečně
+                        otevřené porty zvyšují riziko napadení, proto se na serverech často povolují jen ty potřebné
+                        (např. 22 pro SSH, 443 pro web).
+                    </p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Který port používá protokol HTTPS?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q1" value="a">
+                                <span>a. 80</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q1" value="b">
+                                <span>b. 443</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q1" value="c">
+                                <span>c. 22</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q1" value="d">
+                                <span>d. 53</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Který port používá protokol HTTP?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q2" value="a">
+                                <span>a. 80</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q2" value="b">
+                                <span>b. 443</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q2" value="c">
+                                <span>c. 21</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q2" value="d">
+                                <span>d. 22</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Který port používá protokol FTP?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q3" value="a">
+                                <span>a. 22</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q3" value="b">
+                                <span>b. 53</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q3" value="c">
+                                <span>c. 21</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q3" value="d">
+                                <span>d. 443</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Který port používá protokol SSH?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q4" value="a">
+                                <span>a. 22</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q4" value="b">
+                                <span>b. 21</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q4" value="c">
+                                <span>c. 80</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q4" value="d">
+                                <span>d. 443</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Který port používá služba DNS?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q5" value="a">
+                                <span>a. 80</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q5" value="b">
+                                <span>b. 53</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q5" value="c">
+                                <span>c. 22</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q5" value="d">
+                                <span>d. 21</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Které porty používá služba DHCP?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q6" value="a">
+                                <span>a. 21 a 22</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q6" value="b">
+                                <span>b. 67 a 68</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q6" value="c">
+                                <span>c. 80 a 443</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q6" value="d">
+                                <span>d. 53</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Který port se typicky používá pro odesílání e-mailů?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q7" value="a">
+                                <span>a. 110</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q7" value="b">
+                                <span>b. 25</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q7" value="c">
+                                <span>c. 443</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q7" value="d">
+                                <span>d. 53</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Který port používá šifrovaný přístup k e-mailům na serveru?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q8" value="a">
+                                <span>a. 143</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q8" value="b">
+                                <span>b. 110</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q8" value="c">
+                                <span>c. 993</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-3-q8" value="d">
+                                <span>d. 25</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <div class="task-answer-block task-answer-block--fill">
+                        <h3 class="task-answer-title">Doplň porty do vět</h3>
+                        <p class="task-answer-instruction">Klikni na slovo (číslo portu) a pak na mezeru, nebo naopak. Chceš-li slovo změnit, klikni na vyplněnou mezeru. Až doplníš vše, klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-fill-sentences">
+                            <p>Zabezpečený web používá port <span class="task-fill-gap" data-correct="443"></span>, nešifrovaný webový port <span class="task-fill-gap" data-correct="80"></span>.</p>
+                            <p>Pro přenos souborů se používá port <span class="task-fill-gap" data-correct="21"></span>, pro zabezpečené přihlášení na dálku port <span class="task-fill-gap" data-correct="22"></span>.</p>
+                            <p>Převod domén na IP adresy probíhá na portu <span class="task-fill-gap" data-correct="53"></span>. Přidělování IP adres využívá porty <span class="task-fill-gap" data-correct="67"></span> a <span class="task-fill-gap" data-correct="68"></span>.</p>
+                            <p>Odesílání e-mailů používá port <span class="task-fill-gap" data-correct="25"></span>. Stažení e-mailů ze serveru může používat port <span class="task-fill-gap" data-correct="143"></span> nebo šifrovaný <span class="task-fill-gap" data-correct="993"></span>.</p>
+                        </div>
+                        <p class="task-fill-words-label">Porty k doplnění:</p>
+                        <div class="task-fill-words">
+                            <span class="task-fill-word" data-value="80">80</span>
+                            <span class="task-fill-word" data-value="443">443</span>
+                            <span class="task-fill-word" data-value="21">21</span>
+                            <span class="task-fill-word" data-value="22">22</span>
+                            <span class="task-fill-word" data-value="53">53</span>
+                            <span class="task-fill-word" data-value="67">67</span>
+                            <span class="task-fill-word" data-value="68">68</span>
+                            <span class="task-fill-word" data-value="25">25</span>
+                            <span class="task-fill-word" data-value="143">143</span>
+                            <span class="task-fill-word" data-value="993">993</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="443">
+                        <h3 class="task-answer-title">Jaké číslo portu používá HTTPS?</h3>
+                        <p class="task-answer-instruction">Napiš číslo portu.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="80">
+                        <h3 class="task-answer-title">Jaké číslo portu používá HTTP?</h3>
+                        <p class="task-answer-instruction">Napiš číslo portu.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="21">
+                        <h3 class="task-answer-title">Jaké číslo portu používá FTP?</h3>
+                        <p class="task-answer-instruction">Napiš číslo portu.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="22">
+                        <h3 class="task-answer-title">Jaké číslo portu používá SSH?</h3>
+                        <p class="task-answer-instruction">Napiš číslo portu.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="53">
+                        <h3 class="task-answer-title">Jaké číslo portu používá DNS?</h3>
+                        <p class="task-answer-instruction">Napiš číslo portu.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="67|68">
+                        <h3 class="task-answer-title">Napiš jedno z čísel portů, které používá DHCP (server nebo klient).</h3>
+                        <p class="task-answer-instruction">Napiš číslo portu (obě varianty jsou správné).</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="25|587">
+                        <h3 class="task-answer-title">Jaké číslo portu používá protokol SMTP pro odesílání e-mailů?</h3>
+                        <p class="task-answer-instruction">Napiš číslo portu (obě varianty jsou správné).</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="993|143">
+                        <h3 class="task-answer-title">Napiš číslo portu pro IMAP (přístup k e-mailům na serveru).</h3>
+                        <p class="task-answer-instruction">Napiš číslo portu (obě varianty jsou správné).</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+    <script src="../../assets/task-fill.js"></script>
+</body>
+</html>

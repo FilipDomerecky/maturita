@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIA triáda – Kyberbezpečnost</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+    <style>
+        .task-answer-note { font-size: 0.9rem; color: #666; margin-top: 0.5rem; font-style: italic; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../../site/index.html">Sítě</a>
+            <a href="../index.html" class="active">Kyberbezpečnost</a>
+        </nav>
+        <a class="user"><img src="../../assets/main/user.png" width="24" height="24" alt=""></a>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Kyberbezpečnost</a>
+                <span>/</span>
+                <span class="task-name">CIA triáda</span>
+            </nav>
+
+            <h1>CIA triáda</h1>
+            <p class="task-desc">Confidentiality, integrity, availability.</p>
+            <h3 class="task-difficulty medium">Středně těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Který princip?</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Co je zasaženo?</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Nejlepší vysvětlení</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    
+                        <p>CIA triáda je základní model informační bezpečnosti, který popisuje tři hlavní oblasti, které je potřeba chránit. Zkratka CIA v tomto případě neznamená zpravodajskou službu, ale pojmy Confidentiality, Integrity a Availability, tedy důvěrnost, integritu a dostupnost. Tyto tři principy se používají jako základ pro návrh zabezpečení systémů, sítí i dat.</p>
+                        <p>Nejde jen o teorii, ale o praktický způsob, jak přemýšlet o bezpečnosti. Když se chrání data nebo služba, nestačí řešit jen to, aby je nikdo neukradl. Stejně důležité je zajistit, aby je nikdo neoprávněně nezměnil a aby byla v případě potřeby dostupná oprávněným uživatelům.</p>
+
+                        <h3>Confidentiality</h3>
+                        <p>Confidentiality, tedy důvěrnost, znamená, že k informacím mají přístup jen oprávněné osoby. Cílem je zabránit tomu, aby se citlivá data dostala k někomu, kdo je nemá vidět. Může jít například o hesla, osobní údaje, zdravotní dokumentaci, firemní informace nebo přístupové údaje.</p>
+                        <p>Důvěrnost se v praxi chrání například pomocí hesel, vícefaktorového ověřování, šifrování nebo správně nastavených oprávnění. Pokud například někdo zachytí přihlašovací údaje na veřejné Wi-Fi nebo se dostane do cizího e-mailu, jde o narušení důvěrnosti. Stejně tak je problém, když zaměstnanec vidí data, ke kterým by vůbec neměl mít přístup.</p>
+                        <p>S důvěrností souvisí také klasifikace dat podle důležitosti nebo citlivosti. V praxi se informace často rozdělují do skupin, například jako veřejné, interní, důvěrné nebo přísně důvěrné. Smyslem je určit, kdo k nim může přistupovat, jak se mohou sdílet a jak silně mají být chráněna. Někdy se pro přehlednost používá i barevné označení, které funguje podobně jako semafor. Barvy pak rychle ukazují, jak citlivá data jsou a jak opatrně se s nimi má zacházet. Čím důležitější nebo citlivější informace jsou, tím přísnější pravidla pro jejich ukládání, přenos i přístup k nim platí.</p>
+
+                        <h3>Integrity</h3>
+                        <p>Integrity, tedy integrita, znamená, že data zůstávají správná, úplná a nebyla neoprávněně změněna. Nejde tedy jen o to, kdo data vidí, ale také o to, zda s nimi nikdo nemanipuloval. Uživatel musí mít jistotu, že soubor, zpráva nebo databázový záznam obsahují správné informace a nebyly cestou nebo po uložení pozměněny.</p>
+                        <p>Integrita je důležitá například u účetních dat, výsledků testů, smluv nebo systémových konfigurací. Pokud útočník změní obsah databáze, upraví číslo účtu na faktuře nebo pozmění přenášenou komunikaci, je narušena právě integrita. K ochraně integrity se používají například kontrolní součty, digitální podpisy, oprávnění pro úpravy dat nebo logování změn.</p>
+
+                        <h3>Availability</h3>
+                        <p>Availability, tedy dostupnost, znamená, že data, systémy a služby jsou dostupné tehdy, kdy jsou potřeba. Nestačí, aby byla data správná a chráněná, pokud se k nim uživatelé v důležité chvíli vůbec nedostanou. Dostupnost je důležitá jak u běžných webů, tak u firemních systémů, školních aplikací nebo nemocničních databází.</p>
+                        <p>Narušení dostupnosti může způsobit například výpadek serveru, porucha hardwaru, chyba v systému, ransomware nebo DoS a DDoS útoky. Ochrana dostupnosti zahrnuje například zálohování, redundantní infrastrukturu, monitoring, kvalitní správu serverů a ochranu proti zahlcení služby. Ve firmách je dostupnost důležitá i proto, že výpadek může znamenat nejen technický problém, ale i finanční ztráty.</p>
+
+                        <h3>Proč je CIA triáda důležitá</h3>
+                        <p>CIA triáda ukazuje, že bezpečnost není jen o jednom problému. Když se například podaří dobře ochránit důvěrnost dat, ale služba často nefunguje, bezpečnost stále není dostatečná. Stejně tak nestačí, že je systém dostupný, pokud může kdokoliv měnit jeho obsah. Skutečné zabezpečení musí řešit všechny tři části zároveň.</p>
+                        <p>V praxi se tyto principy často prolínají. Například útok man-in-the-middle může ohrozit důvěrnost i integritu komunikace, zatímco DDoS útok cílí hlavně na dostupnost. Ransomware může omezit dostupnost souborů, ale v některých případech může zároveň ohrozit i důvěrnost dat, pokud je útočník před zašifrováním zkopíruje.</p>
+                    
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">U každé situace vyber, který princip CIA triády je narušen nejvíce.</p>
+
+                    <p>Útočník se dostal do školního systému a stáhl si seznam žáků včetně adres, telefonních čísel a rodných čísel. Samotná data nijak neupravoval a systém dál normálně fungoval.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Který princip je narušen nejvíce?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q1" value="a"><span>a) Confidentiality</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q1" value="b"><span>b) Integrity</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q1" value="c"><span>c) Availability</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>V databázi firmy někdo nenápadně změnil číslo účtu u několika faktur. Zaměstnanci měli k systému stále přístup a žádná data nezmizela.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Který princip je narušen nejvíce?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q2" value="a"><span>a) Confidentiality</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q2" value="b"><span>b) Integrity</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q2" value="c"><span>c) Availability</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>E-shop byl během odpoledne nedostupný, protože server nezvládl obrovské množství požadavků. Data zákazníků neunikla a obsah databáze zůstal beze změny.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Který princip je narušen nejvíce?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q3" value="a"><span>a) Confidentiality</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q3" value="b"><span>b) Integrity</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q3" value="c"><span>c) Availability</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel se připojil na nezabezpečenou Wi-Fi a útočník zachytil jeho přihlašovací údaje při přenosu. Účet pak zůstal beze změn a služba fungovala dál.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Který princip je narušen nejvíce?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q4" value="a"><span>a) Confidentiality</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q4" value="b"><span>b) Integrity</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q4" value="c"><span>c) Availability</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce omylem nahradil aktuální soubor starší verzí, takže systém sice běžel, ale zobrazoval nesprávné údaje.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Který princip je narušen nejvíce?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q5" value="a"><span>a) Confidentiality</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q5" value="b"><span>b) Integrity</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q5" value="c"><span>c) Availability</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Nemocniční informační systém nešel několik hodin používat kvůli poruše serveru. Nikdo se k datům cizí nedostal a záznamy nebyly změněny.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Který princip je narušen nejvíce?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q6" value="a"><span>a) Confidentiality</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q6" value="b"><span>b) Integrity</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p1-q6" value="c"><span>c) Availability</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">U každé situace napiš, který princip CIA triády je hlavně zasažen (Confidentiality, Integrity nebo Availability).</p>
+
+                    <p>Zaměstnanec omylem poslal interní dokument s údaji o platech celé firmy na špatnou e-mailovou adresu mimo organizaci.</p>
+                    <div class="task-answer-block" data-correct="confidentiality|důvěrnost">
+                        <h3 class="task-answer-title">Co je zasaženo hlavně?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Confidentiality / Integrity / Availability" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Při přenosu dat mezi dvěma systémy došlo k jejich pozměnění, takže cílový systém obdržel jiný obsah, než byl původně odeslán.</p>
+                    <div class="task-answer-block" data-correct="integrity|integrida">
+                        <h3 class="task-answer-title">Co je zasaženo hlavně?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Confidentiality / Integrity / Availability" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Školní web během přijímaček spadl a uchazeči se nemohli přihlásit k testům, i když databáze i obsah zůstaly nepoškozené.</p>
+                    <div class="task-answer-block" data-correct="availability|dostupnost">
+                        <h3 class="task-answer-title">Co je zasaženo hlavně?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Confidentiality / Integrity / Availability" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Útočník získal přístup k souborům zaměstnance, ale nic nesmazal ani nezměnil. Jen si je zkopíroval.</p>
+                    <div class="task-answer-block" data-correct="confidentiality|důvěrnost">
+                        <h3 class="task-answer-title">Co je zasaženo hlavně?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Confidentiality / Integrity / Availability" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Ve firemní databázi někdo upravil několik záznamů tak, že už neodpovídaly skutečnosti. Systém byl stále dostupný.</p>
+                    <div class="task-answer-block" data-correct="integrity|integrida">
+                        <h3 class="task-answer-title">Co je zasaženo hlavně?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Confidentiality / Integrity / Availability" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Ransomware zašifroval soubory na počítači a uživatel se k nim nemohl dostat, i když fyzicky na disku stále byly.</p>
+                    <div class="task-answer-block" data-correct="availability|dostupnost">
+                        <h3 class="task-answer-title">Co je zasaženo hlavně?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Confidentiality / Integrity / Availability" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                        <p class="task-answer-note">U ransomwaru může být v některých případech ohrožena i důvěrnost dat, pokud je útočník před zašifrováním zkopíruje.</p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <p class="task-answer-instruction">Vyber nejlepší vysvětlení nebo odpověď.</p>
+
+                    <p>Proč změna známky v databázi školy spadá hlavně pod problém integrity?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q1" value="a"><span>a) Protože data nejsou dostupná</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q1" value="b"><span>b) Protože data už nejsou správná a byla neoprávněně změněna</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q1" value="c"><span>c) Protože je nikdo nesmí vidět</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q1" value="d"><span>d) Protože server běží pomalu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Proč výpadek firemního webu během pracovní doby souvisí hlavně s availability?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q2" value="a"><span>a) Protože uživatelé se ke službě nemohou dostat, když ji potřebují</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q2" value="b"><span>b) Protože někdo určitě změnil obsah webu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q2" value="c"><span>c) Protože všechna data unikla na internet</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q2" value="d"><span>d) Protože zaměstnanci používají stejné heslo</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Proč odeslání citlivého dokumentu nesprávnému příjemci souvisí hlavně s confidentiality?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q3" value="a"><span>a) Protože dokument přestal existovat</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q3" value="b"><span>b) Protože data se dostala k neoprávněné osobě</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q3" value="c"><span>c) Protože byl vypnut server</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q3" value="d"><span>d) Protože došlo k poruše hardwaru</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Které opatření nejvíce souvisí s ochranou integrity?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber odpověď</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q4" value="a"><span>a) Kontrolní součty a digitální podpisy</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q4" value="b"><span>b) Záložní zdroj napájení</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q4" value="c"><span>c) Redundance serverů</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q4" value="d"><span>d) Uzamčení místnosti s routerem</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Které opatření nejvíce souvisí s ochranou confidentiality?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber odpověď</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q5" value="a"><span>a) Šifrování a řízení přístupových oprávnění</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q5" value="b"><span>b) Zálohy a redundance</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q5" value="c"><span>c) Monitoring výpadků serveru</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q5" value="d"><span>d) Load balancing</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Které opatření nejvíce souvisí s ochranou availability?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber odpověď</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q6" value="a"><span>a) Silnější heslo k účtu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q6" value="b"><span>b) Zálohování, redundance a ochrana proti výpadkům</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q6" value="c"><span>c) Digitální podpis dokumentu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k6-p3-q6" value="d"><span>d) Omezení práv pro čtení souboru</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>

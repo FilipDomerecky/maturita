@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co znamená tento výstup? – Sítě</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../index.html" class="active">Sítě</a>
+            <a href="../../kyberbezpecnost/index.html">Kyberbezpečnost</a>
+        </nav>
+        <a class="user"><img src="../../assets/main/user.png" width="24" height="24" alt=""></a>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Sítě</a>
+                <span>/</span>
+                <span class="task-name">Co znamená tento výstup?</span>
+            </nav>
+
+            <h1>Co znamená tento výstup?</h1>
+            <p class="task-desc">Z výpisu příkazu urči problém v síti.</p>
+            <h3 class="task-difficulty medium">Středně těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Ping</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Tracert</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Ipconfig</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <p>
+                        Při diagnostice sítě používáme příkazy, jejichž výstup nám napoví, kde je problém.
+                        Z výpisu lze poznat, zda je zařízení dostupné, zda máme správnou IP adresu nebo kudy pakety putují.
+                    </p>
+                    <h3>Ping</h3>
+                    <p>
+                        <strong>ping</strong> <em>adresa</em> — ověřuje dostupnost cíle (odešle ICMP pakety).<br>
+                        <strong>Reply from …</strong> = cíl odpovídá, spojení funguje. <strong>Request timed out</strong> = odpověď nepřišla (cíl vypnutý, firewall, nebo problém na cestě).
+                        <strong>Destination host unreachable</strong> = router neví, jak se k cíli dostat.
+                        Na konci ping zobrazí statistiku: kolik paketů bylo odesláno, kolik doručeno, případně <strong>ztrátu (loss)</strong> v procentech — např. „Lost = 1 (25% loss)“ znamená nestabilní spojení.
+                    </p>
+                    <p>
+                        <strong>ping -n 4</strong> (Windows) / <strong>ping -c 4</strong> (Linux) — počet odeslaných paketů (např. 4).<br>
+                        <strong>ping -t</strong> (Windows) — ping běží donekonečna, ukončení Ctrl+C.
+                    </p>
+                    <h3>Ipconfig (Windows)</h3>
+                    <p>
+                        <strong>ipconfig</strong> — zobrazí IP adresu, masku, výchozí bránu (gateway) a DNS pro každé rozhraní.<br>
+                        <strong>ipconfig /all</strong> — podrobný výpis včetně MAC adresy, DHCP, časů zapůjčení.<br>
+                        <strong>ipconfig /release</strong> — odešle IP adresu zpět DHCP serveru.<br>
+                        <strong>ipconfig /renew</strong> — požádá DHCP o nové přidělení IP (vhodné po /release nebo při problémech s připojením).
+                    </p>
+                    <h3>Ifconfig a ip (Linux)</h3>
+                    <p>
+                        <strong>ifconfig</strong> — zobrazení a základní nastavení rozhraní (IP, maska). Na novějších systémech se často používá <strong>ip</strong>.<br>
+                        <strong>ip addr</strong> (nebo <strong>ip a</strong>) — zobrazí adresy všech rozhraní.<br>
+                        <strong>ip route</strong> — zobrazí výchozí bránu a směrovací tabulku.
+                    </p>
+                    <h3>Traceroute</h3>
+                    <p>
+                        <strong>tracert</strong> (Windows) / <strong>traceroute</strong> nebo <strong>mtr</strong> (Linux) — zobrazí cestu k cíli (seznam routerů, hopů). Používá se k zjištění, kde na trase dochází k ztrátě nebo velkému zpoždění.
+                    </p>
+                    <h3>Další základní příkazy</h3>
+                    <p>
+                        <strong>nslookup</strong> <em>domena</em> — ověří, na jakou IP adresu se překládá doménové jméno (DNS).<br>
+                        <strong>getmac</strong> (Windows) — zobrazí MAC adresy síťových adaptérů.
+                    </p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">Podívej se na výstup příkazu <strong>ping</strong> na obrázcích a vyber, co daný výstup znamená.</p>
+
+                    <figure class="task-figure">
+                        <img src="../../assets/tasks/paketsend.png" alt="Výstup ping – obrázek 1">
+                    </figure>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Co znamená výstup na obrázku?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-img1" value="a"><span>a. Funkční ping</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-img1" value="b"><span>b. Ztráta paketů</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-img1" value="c"><span>c. Cíl nedostupný </span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-img1" value="d"><span>d. Chyba v příkazu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <figure class="task-figure">
+                        <img src="../../assets/tasks/paketloss.png" alt="Výstup ping – obrázek 2">
+                    </figure>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co znamená výstup na obrázku?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-img2" value="a"><span>a. Funkční ping</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-img2" value="b"><span>b. Ztráta paketů</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-img2" value="c"><span>c. Cíl nedostupný</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-img2" value="d"><span>d. Chyba v příkazu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">Podívej se na výstup příkazu <strong>tracert</strong> na obrázku a odpověz na otázky.</p>
+                    <figure class="task-figure">
+                        <img src="../../assets/tasks/tracert.png" alt="Výstup příkazu tracert">
+                    </figure>
+
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Kolik síťových zařízení paket prošel, než dorazil na server 8.8.8.8?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-tracert1" value="a"><span>a. 8</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-tracert1" value="b"><span>b. 11</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-tracert1" value="c"><span>c. 13</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-tracert1" value="d"><span>d. 30</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <div class="task-answer-block task-answer-block--choice" data-correct="d">
+                        <h3 class="task-answer-title">Jaká je IP adresa cílového serveru?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-tracert2" value="a"><span>a. 192.168.1.1</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-tracert2" value="b"><span>b. 10.49.50.254</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-tracert2" value="c"><span>c. 90.183.197.114</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-tracert2" value="d"><span>d. 8.8.8.8</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <p class="task-answer-instruction">Podívej se na výstup příkazu <strong>ipconfig</strong> na obrázku a odpověz na otázky.</p>
+                    <figure class="task-figure">
+                        <img src="../../assets/tasks/ipconfig.png" alt="Výstup příkazu ipconfig">
+                    </figure>
+
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Otázka 1: Jaká je IPv4 adresa aktivního ethernetového adaptéru?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig1" value="a"><span>a. 192.168.56.1</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig1" value="b"><span>b. 192.168.1.200</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig1" value="c"><span>c. 8.8.8.8</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig1" value="d"><span>d. 10.0.0.1</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Otázka 2: Jaká je výchozí brána?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig2" value="a"><span>a. 192.168.1.1</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig2" value="b"><span>b. 192.168.1.200</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig2" value="c"><span>c. 255.255.255.0</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig2" value="d"><span>d. 8.8.8.8</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Otázka 3: Jaká je maska podsítě?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig3" value="a"><span>a. 255.0.0.0</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig3" value="b"><span>b. 255.255.255.0</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig3" value="c"><span>c. 255.255.0.0</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig3" value="d"><span>d. 255.255.255.255</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Který adaptér má nastavenou výchozí bránu</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig4" value="a"><span>a. Ethernet</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig4" value="b"><span>b. Ethernet 2</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig4" value="c"><span>c. Wi-Fi</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig4" value="d"><span>d. žádné</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Otázka 5: Je IP adresa 192.168.1.200 veřejná nebo privátní?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig5" value="a"><span>a. Veřejná</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-9-ipconfig5" value="b"><span>b. Privátní</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>

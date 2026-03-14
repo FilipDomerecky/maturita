@@ -1,0 +1,397 @@
+/* jednotlivé úlohy */
+
+.task-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    min-height: calc(100vh - 60px);
+    background: #fff;
+    text-align: left;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Breadcrumb navigace */
+.task-breadcrumb {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.task-breadcrumb a {
+    color: #333;
+    text-decoration: none;
+}
+
+.task-breadcrumb a:hover {
+    color: #000;
+}
+
+.task-breadcrumb span {
+    color: #666;
+    margin: 0 0.25rem;
+}
+
+.task-breadcrumb .task-name {
+    color: #000;
+    font-weight: 600;
+}
+
+/* Hlavní nadpis úlohy */
+.task-page h1 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+}
+
+/* Popis úlohy (z karty) */
+.task-desc {
+    font-size: 1.05rem;
+    margin: 0 0 0.25rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Nadpis obtížnosti – barva podle úrovně */
+.task-difficulty {
+    font-size: 1.1rem;
+    margin: 0 0 1.5rem;
+    font-weight: 600;
+}
+
+.task-difficulty.easy {
+    color: #2e7d32;
+}
+
+.task-difficulty.medium {
+    color: #ed6c02;
+}
+
+.task-difficulty.hard {
+    color: #c62828;
+}
+
+/* Záložky */
+.task-tabs {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+}
+
+.task-tabs button {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    cursor: pointer;
+    border-bottom: none;
+    border-radius: 0.5rem 0.5rem 0 0;
+    transform: translateY(0);
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.task-tabs button:hover {
+    background: #e5e5e5;
+}
+
+/* Aktivní záložka – vizuálně výš */
+.task-tabs button.active {
+    background: #fff;
+    position: relative;
+    transform: translateY(-4px);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+}
+
+/* čára pod záložkami */
+.task-tabs-wrap {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 2rem;
+}
+
+.task-content-wrap {
+    text-align: left;
+    background: #fff;
+    padding: 1.5rem;
+    min-height: 200px;
+}
+
+.task-panel {
+    display: none;
+}
+
+.task-panel.active {
+    display: block;
+}
+
+/* Blok pro odpověď úlohy – šedé ladění se stránkou */
+.task-answer-block {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+/* Nadpis úkolu nad blokem odpovědi */
+.task-answer-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 0.5rem;
+}
+
+/* Text zadání – co se požaduje jako odpověď */
+.task-answer-instruction {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0 0 1rem;
+}
+
+.task-answer-instruction strong {
+    color: #333;
+}
+
+.task-answer-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.task-answer-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.task-answer-points {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.task-answer-attempts {
+    margin-left: auto;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2e7d32;
+}
+
+.task-answer-block.no-attempts .task-answer-attempts {
+    color: #c62828;
+}
+
+.task-answer-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+.task-answer-input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    background: #fff;
+    color: #333;
+}
+
+.task-answer-input:focus {
+    outline: none;
+    border-color: #888;
+}
+
+.task-answer-input:disabled {
+    background: #e8e8e8;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.task-answer-submit {
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid #888;
+    border-radius: 0.35rem;
+    background: #e8e8e8;
+    color: #333;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.task-answer-submit:hover:not(:disabled) {
+    background: #ddd;
+    border-color: #666;
+}
+
+.task-answer-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.task-answer-feedback {
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    min-height: 1.4em;
+}
+
+.task-answer-block .task-answer-feedback.correct {
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.task-answer-block .task-answer-feedback.wrong {
+    color: #c62828;
+}
+
+.task-answer-block.solved {
+    border-color: #2e7d32;
+    background: #f1f8f1;
+}
+
+/* ========== Varianta: výběr jedné možnosti ========== */
+.task-answer-block--choice .task-answer-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.task-answer-block--choice .task-answer-option {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.task-answer-block--choice .task-answer-option input[type="radio"] {
+    width: 1.1em;
+    height: 1.1em;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #555;
+}
+
+.task-answer-block--choice .task-answer-option input[type="radio"]:disabled {
+    cursor: not-allowed;
+}
+
+.task-answer-block--choice .task-answer-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* ========== Varianta: doplň chybějící slova (přetažení) ========== */
+.task-answer-block--fill .task-fill-sentences {
+    margin-bottom: 1.25rem;
+}
+
+.task-answer-block--fill .task-fill-sentences p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+}
+
+.task-answer-block--fill .task-fill-gap {
+    display: inline-block;
+    min-width: 6rem;
+    min-height: 1.8em;
+    margin: 0 0.15rem;
+    padding: 0.2rem 0.4rem;
+    vertical-align: middle;
+    border: 2px dashed #999;
+    border-radius: 0.25rem;
+    background: #eee;
+    color: #333;
+    cursor: pointer;
+}
+
+.task-answer-block--fill .task-fill-gap.drag-over,
+.task-answer-block--fill .task-fill-gap.selected {
+    border-color: #555;
+    background: #e0e0e0;
+}
+
+.task-answer-block--fill .task-fill-gap.filled {
+    border-style: solid;
+    border-color: #888;
+    background: #fff;
+    cursor: pointer;
+}
+
+.task-answer-block--fill .task-fill-gap.gap-correct {
+    border-color: #2e7d32;
+    background: #e8f5e9;
+    cursor: default;
+}
+
+.task-answer-block--fill .task-fill-gap.gap-wrong {
+    border-color: #c62828;
+    background: #ffebee;
+}
+
+.task-answer-block--fill .task-fill-words-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.task-answer-block--fill .task-fill-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.task-answer-block--fill .task-fill-word {
+    display: inline-block;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.95rem;
+    border: 1px solid #888;
+    border-radius: 0.35rem;
+    background: #e8e8e8;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+}
+
+.task-answer-block--fill .task-fill-word:hover {
+    background: #ddd;
+}
+
+.task-answer-block--fill .task-fill-word:active {
+    background: #ccc;
+}
+
+.task-answer-block--fill .task-fill-word.used {
+    display: none;
+}
+
+.task-answer-block--fill .task-fill-word.selected {
+    border-color: #333;
+    background: #d0d0d0;
+    box-shadow: 0 0 0 2px #555;
+}
+
+.task-answer-block--fill .task-answer-row {
+    margin-top: 0.5rem;
+}
+/* Obrázky v úlohách – platí pro jakýkoliv figure v panelu úlohy */
+.task-panel figure {
+    text-align: center;
+    margin: 0 0 1rem;
+}
+.task-panel figure img {
+    width: 480px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}

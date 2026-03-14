@@ -1,0 +1,53 @@
+.hero {
+    position: relative; 
+    height: 500px; 
+    display: flex; 
+    align-items: center; 
+    padding: 3rem 1.5rem;
+    background: #1e3a5f url("main/hero.png") center/cover no-repeat; 
+    color: #fff;
+}
+
+.hero::before { 
+    content: ""; 
+    position: absolute; 
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 0; 
+}
+
+.hero  div { 
+    position: relative; 
+    z-index: 1; 
+}
+.hero h1 { font-size: 28px; font-weight: 700; margin: 0 0 1rem; }
+.hero p { margin: 0 0 2rem; }
+
+.btn { display: inline-block; padding: 0.75rem 1.5rem; background: #14b8a6; color: #fff; font-weight: 600; text-decoration: none; border-radius: 8px; text-align: center; }
+.btn:hover { background: #0d9488; }
+.content .card .btn { padding: 0.6rem 1.25rem; }
+
+/* main obsah na strance */
+.content {
+    max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem;
+    background: #dbdbdb; box-shadow: -8px 0 16px -10px rgba(0,0,0,0.06), 8px 0 16px -10px rgba(0,0,0,0.06);
+}
+.content h2 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; color: #14b8a6; }
+.content h2:first-child { margin-top: 0; }
+.content p { margin: 0 0 2rem; line-height: 1.6; }
+
+.content .block { display: flex; gap: 1rem; margin-bottom: 2rem; }
+.content .block .icon, .content .benefits img { width: 32px; height: 32px; flex-shrink: 0; }
+.content .block h3 { font-size: 1.25rem; font-weight: 700; margin: 0 0 0.5rem; }
+.content .block p { margin: 0; line-height: 1.6; }
+
+.content .benefits { list-style: none; margin: 0 0 2rem; padding: 0; }
+.content .benefits li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+
+.content .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 700px; margin: 0 auto 2rem; }
+.content .card { background: #36454f; color: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 4px 4px 12px rgba(0,0,0,0.15); display: flex; flex-direction: column; }
+.content .card h3 { font-size: 1.25rem; font-weight: 700; margin: 0 0 1rem; }
+.content .card ul { margin: 0 0 1.25rem; padding-left: 1.25rem; flex-grow: 1; line-height: 1.6; }
+.content .card li { margin-bottom: 0.35rem; }
+
+.content .start-link { display: inline-flex; align-items: center; gap: 0.5rem; color: #36454f; text-decoration: none; font-weight: 500; }

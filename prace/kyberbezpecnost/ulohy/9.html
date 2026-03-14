@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zabezpečení počítačové sítě – Kyberbezpečnost</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../../site/index.html">Sítě</a>
+            <a href="../index.html" class="active">Kyberbezpečnost</a>
+        </nav>
+        <a class="user"><img src="../../assets/main/user.png" width="24" height="24" alt=""></a>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Kyberbezpečnost</a>
+                <span>/</span>
+                <span class="task-name">Zabezpečení počítačové sítě</span>
+            </nav>
+
+            <h1>Zabezpečení počítačové sítě</h1>
+            <p class="task-desc">Firewall, otevřené porty, segmentace.</p>
+            <h3 class="task-difficulty medium">Středně těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Které opatření?</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Co je problém?</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Nejlepší vysvětlení</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                        <p>Zabezpečení počítačové sítě je důležité proto, aby se do sítě nedostal neoprávněný uživatel, aby nebyly zbytečně dostupné citlivé služby a aby případný problém neohrozil všechna zařízení najednou. V praxi nestačí chránit jen jednotlivé počítače antivirem nebo aktualizacemi, ale je potřeba řešit i samotnou síťovou komunikaci, přístup mezi zařízeními a spojení s internetem. Mezi základní prvky síťového zabezpečení patří firewall, správná práce s otevřenými porty a segmentace sítě.</p>
+
+                        <h3>Firewall</h3>
+                        <p>Firewall je bezpečnostní prvek, který kontroluje síťovou komunikaci a rozhoduje, která spojení budou povolena a která zablokována. Díky tomu může filtrovat podezřelý provoz, omezovat přístup k určitým službám a chránit síť před nechtěnými spojeními z internetu nebo z jiné části sítě. Firewall se může nacházet přímo v zařízení jako softwarový firewall, ale často se používá i jako samostatné síťové zařízení mezi internetem a vnitřní sítí.</p>
+                        <p>V praxi je důležité, aby firewall nepovoloval zbytečně vše. Bezpečnější přístup je nastavit pravidla tak, aby byla povolena jen komunikace, která je opravdu potřebná, a ostatní provoz byl blokován. Firewall tak může například povolit přístup na webový server, ale zablokovat nechtěné pokusy o vzdálené připojení z internetu. Ve firmách se často používají i pokročilejší firewally, které umí nejen filtrovat porty a adresy, ale také sledovat typ provozu nebo odhalovat známé útoky.</p>
+
+                        <h3>Otevřené porty</h3>
+                        <p>Každá síťová služba komunikuje přes určitý port. Port si lze představit jako konkrétní vstupní bod, přes který zařízení přijímá nebo odesílá data. Pokud je na zařízení otevřený port, znamená to, že na něm naslouchá nějaká služba a je možné se k ní připojit. To je běžné například u webových serverů, vzdálené správy nebo sdílení souborů.</p>
+                        <p>Z bezpečnostního hlediska ale platí, že každý zbytečně otevřený port představuje potenciální riziko. Útočník může pomocí skenování zjistit, které porty jsou dostupné, a následně se pokusit zneužít službu, která za nimi běží. Proto by měly být otevřené jen ty porty, které jsou skutečně nutné. Nestačí tedy jen vědět, že je port otevřený, ale i proč je otevřený, jaká služba za ním běží a zda je správně nastavená a aktualizovaná.</p>
+                        <p>Rizikem není jen počet otevřených portů, ale i kvalita služeb, které jsou na nich dostupné. I jeden jediný otevřený port může být problém, pokud na něm běží zastaralá nebo špatně zabezpečená služba. V praxi se proto často kontroluje, které porty jsou zvenčí viditelné, a zbytečné služby se vypínají nebo se jejich přístup omezuje pomocí firewallu.</p>
+
+                        <h3>Segmentace sítě</h3>
+                        <p>Segmentace sítě znamená rozdělení jedné větší sítě na menší části, mezi kterými není automaticky povolená veškerá komunikace. Smyslem je omezit šíření problémů a zpřehlednit, kdo s kým může komunikovat. Pokud je celá síť v jednom společném prostoru, může se malware, neoprávněný přístup nebo chyba v konfiguraci šířit mnohem snadněji. Když je síť rozdělena do více segmentů, lze komunikaci mezi nimi lépe řídit a filtrovat.</p>
+                        <p>V praxi se segmentace používá například pro oddělení serverů, kancelářských počítačů, tiskáren, kamer, IoT zařízení nebo hostovské Wi-Fi. Návštěvník připojený na guest síť by například neměl dostat ke školním nebo firemním počítačům. Podobně běžná pracovní stanice nemusí mít přístup ke všem serverům nebo síťovým prvkům. Segmentace tak snižuje riziko, že se problém z jedné části sítě automaticky rozšíří do celé infrastruktury.</p>
+                        <p>Technicky se segmentace často řeší pomocí VLAN nebo oddělených podsítí, ale důležitá není jen samotná existence oddělených částí. Podstatné je hlavně to, jaká pravidla platí mezi nimi. Pokud jsou segmenty sice vytvořené, ale komunikace mezi nimi je téměř bez omezení, bezpečnostní přínos je malý.</p>
+
+                        <h3>Princip minimálně nutného přístupu</h3>
+                        <p>Se zabezpečením sítě úzce souvisí i princip minimálně nutného přístupu. To znamená, že zařízení, služby i uživatelé by měli mít jen takový síťový přístup, který skutečně potřebují. Tiskárna například nepotřebuje komunikovat se všemi servery v síti a běžný počítač zaměstnance obvykle nepotřebuje přístup k administraci síťových prvků. Čím méně zbytečných spojení síť umožňuje, tím menší je prostor pro zneužití.</p>
+
+                        <h3>Monitoring a kontrola provozu</h3>
+                        <p>Důležitou součástí zabezpečení počítačové sítě je také monitoring. Nestačí síť jen nastavit, ale je potřeba sledovat, co se v ní děje. Monitoring může pomoci odhalit neobvyklý provoz, pokusy o připojení na zakázané porty, nadměrné množství komunikace nebo podezřelá spojení mezi zařízeními. Díky tomu může správce reagovat dříve, než se z menšího problému stane větší incident.</p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">Vyber opatření, které by v dané situaci pomohlo nejvíc.</p>
+
+                    <p>Ve škole jsou ve stejné síti počítače učitelů, studentské stanice, tiskárny i Wi-Fi pro návštěvy. Správce zjistil, že zařízení z guest Wi-Fi mohou komunikovat i s interními zařízeními. Co by pomohlo nejvíc?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Které opatření by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q1" value="a"><span>a) změnit název Wi-Fi</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q1" value="b"><span>b) oddělit guest síť</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q1" value="c"><span>c) vypnout tiskárny</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q1" value="d"><span>d) změnit studentská hesla</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Na serveru běží několik služeb, které už firma nepoužívá, ale jejich porty jsou stále otevřené a dostupné z internetu. Co je nejvhodnější udělat?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Které opatření by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q2" value="a"><span>a) nechat vše beze změny</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q2" value="b"><span>b) zavřít zbytečné porty</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q2" value="c"><span>c) restartovat server</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q2" value="d"><span>d) změnit IP adresu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce chce, aby webový server byl dostupný z internetu, ale aby na něj nešlo zvenčí přistupovat přes vzdálenou správu. Jaké opatření dává největší smysl?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Které opatření by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q3" value="a"><span>a) povolit všechen provoz</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q3" value="b"><span>b) filtrovat provoz firewallem</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q3" value="c"><span>c) vypnout DNS</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q3" value="d"><span>d) přesunout server jinam</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>V kanceláři se začal šířit malware z jednoho napadeného zařízení na další počítače ve stejné síti. Co by jeho šíření mohlo výrazně omezit?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Které opatření by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q4" value="a"><span>a) rozdělit síť na části</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q4" value="b"><span>b) koupit větší monitor</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q4" value="c"><span>c) změnit prohlížeč</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q4" value="d"><span>d) vypnout aktualizace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce potřebuje odhalit neobvyklé pokusy o připojení na porty, které by normálně nikdo používat neměl. Co mu s tím pomůže nejvíc?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Které opatření by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q5" value="a"><span>a) sledování síťového provozu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q5" value="b"><span>b) změna názvu Wi-Fi</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q5" value="c"><span>c) vypnutí firewallu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p1-q5" value="d"><span>d) přejmenování serveru</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">U každé situace vyber, co je největší nebo hlavní problém.</p>
+
+                    <p>Na firemním serveru je otevřený jen jeden port, ale běží za ním stará služba s neopravenou zranitelností. Co je hlavní problém?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co je v situaci největší problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q1" value="a"><span>a) otevřený je jen jeden port</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q1" value="b"><span>b) riziková je samotná služba</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q1" value="c"><span>c) server běží na elektřinu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q1" value="d"><span>d) chybí popis služby</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Firma si rozdělila síť do více VLAN, ale mezi všemi segmenty je téměř všechno povoleno. Co je nejpřesnější?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co je v situaci největší problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q2" value="a"><span>a) segmentace je hotová</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q2" value="b"><span>b) chybí omezení mezi sítěmi</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q2" value="c"><span>c) VLAN řeší vše</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q2" value="d"><span>d) firewall už netřeba</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Na routeru je povoleno velké množství příchozích spojení „pro jistotu“, aby něco nepřestalo fungovat. Jaký je hlavní bezpečnostní problém?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co je v situaci největší problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q3" value="a"><span>a) síť bude rychlejší</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q3" value="b"><span>b) zbytečně velký prostor pro útok</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q3" value="c"><span>c) Wi-Fi bude silnější</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q3" value="d"><span>d) zlepší se segmentace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Všechny interní servery, kamery i tiskárny jsou dostupné ze stejné sítě bez omezení a běžné pracovní stanice se k nim mohou připojit přímo. Co zde chybí nejvíc?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Co je v situaci největší problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q4" value="a"><span>a) oddělení a omezení přístupu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q4" value="b"><span>b) větší disk správce</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q4" value="c"><span>c) víc ikon na ploše</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q4" value="d"><span>d) kratší kabely</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce ví, že firewall je zapnutý, ale vůbec nesleduje, jaký provoz v síti reálně probíhá. Proč to nemusí stačit?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Co je v situaci největší problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q5" value="a"><span>a) neuvidí podezřelý provoz</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q5" value="b"><span>b) firewall bez hudby nefunguje</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q5" value="c"><span>c) monitoring nahradí firewall</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p2-q5" value="d"><span>d) provoz není důležitý</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <p class="task-answer-instruction">Vyber nejlepší vysvětlení nebo odpověď.</p>
+
+                    <p>Proč jsou otevřené porty bezpečnostní téma?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q1" value="a"><span>a) mohou zpřístupnit službu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q1" value="b"><span>b) zpomalují monitor</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q1" value="c"><span>c) vždy znamenají virus</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q1" value="d"><span>d) jsou jen v cloudu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Proč firewall sám o sobě nestačí?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q2" value="a"><span>a) síť potřebuje i další vrstvy</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q2" value="b"><span>b) firewall nic neblokuje</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q2" value="c"><span>c) firewall je jen antivir</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q2" value="d"><span>d) firewall nahrazuje hesla</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Proč se v síti používá segmentace?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q3" value="a"><span>a) aby vše vidělo vše</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q3" value="b"><span>b) aby se šíření omezilo</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q3" value="c"><span>c) aby porty byly větší</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q3" value="d"><span>d) aby nebylo třeba zabezpečení</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Co nejlépe vystihuje bezpečnější přístup k firewallu?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q4" value="a"><span>a) povolit co nejvíc</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q4" value="b"><span>b) povolit jen nutné</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q4" value="c"><span>c) zablokovat vše</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q4" value="d"><span>d) věřit vnitřní síti</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Proč je důležité vědět, proč je port otevřený?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q5" value="a"><span>a) aby správce znal jeho účel</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q5" value="b"><span>b) bez popisku nefunguje</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q5" value="c"><span>c) otevřený port nevadí</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k9-p3-q5" value="d"><span>d) číslo určuje sílu hesla</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>

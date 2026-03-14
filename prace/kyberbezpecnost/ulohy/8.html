@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Útoky na hesla – Kyberbezpečnost</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../../site/index.html">Sítě</a>
+            <a href="../index.html" class="active">Kyberbezpečnost</a>
+        </nav>
+        <a class="user"><img src="../../assets/main/user.png" width="24" height="24" alt=""></a>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Kyberbezpečnost</a>
+                <span>/</span>
+                <span class="task-name">Útoky na hesla</span>
+            </nav>
+
+            <h1>Útoky na hesla</h1>
+            <p class="task-desc">Brute force, dictionary attack.</p>
+            <h3 class="task-difficulty medium">Středně těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Brute force nebo dictionary?</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Nejslabší heslo?</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Jaká obrana?</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+
+                        <p>Hesla patří mezi nejběžnější způsoby ověřování uživatele, a proto jsou častým cílem útoků. Pokud útočník získá správné heslo, může se do systému dostat jako běžný uživatel a obejít část bezpečnostních opatření. Ne vždy přitom musí heslo ukrást přímo — někdy ho může jednoduše uhodnout nebo systematicky zkoušet. Mezi známé útoky na hesla patří například brute force a dictionary attack.</p>
+
+                        <h3>Brute force</h3>
+                        <p>Brute force útok je metoda, při které útočník zkouší velké množství různých kombinací hesel tak dlouho, dokud nenajde správnou. Jde o hrubou sílu — systém prostě zkouší jednu možnost za druhou. Tento útok může být velmi účinný u krátkých a jednoduchých hesel, protože počet možných kombinací je relativně malý. Naopak dlouhá a složitější hesla nebo heslové fráze útok výrazně zpomalují a dělají ho méně praktickým.</p>
+                        <p>V praxi se brute force často neprovádí ručně, ale pomocí automatizovaných nástrojů, které dokážou během krátké doby vyzkoušet velké množství pokusů. Proto se proti tomuto typu útoku chrání například omezením počtu přihlášení, dočasným zablokováním účtu, CAPTCHA nebo vícefaktorovým ověřením.</p>
+
+                        <h3>Dictionary attack</h3>
+                        <p>Dictionary attack, tedy slovníkový útok, je podobný brute force, ale místo všech možných kombinací zkouší jen hesla, která jsou pravděpodobná. Útočník používá seznam často používaných hesel, běžných slov, jmen, dat narození nebo různých upravených variant. Tento útok je rychlejší než klasický brute force, protože nezkouší úplně všechno, ale zaměřuje se na hesla, která si lidé volí nejčastěji.</p>
+                        <p>Dictionary attack bývá úspěšný hlavně tehdy, když uživatel používá jednoduché heslo, běžné slovo nebo snadno odhadnutelnou kombinaci. Patří sem například hesla jako 123456, heslo123, jméno uživatele, název školy nebo kombinace se jménem a rokem narození. Obrana spočívá hlavně v používání delších a méně předvídatelných hesel, ideálně heslových frází, a v tom, že se stejné heslo nepoužívá na více službách.</p>
+
+                        <h3>Rozdíl mezi brute force a dictionary attack</h3>
+                        <p>Hlavní rozdíl je v přístupu. Brute force zkouší postupně velké množství všech možných kombinací, zatímco dictionary attack se soustředí jen na hesla, která dávají větší šanci na úspěch. Slovníkový útok je proto obvykle rychlejší, ale méně univerzální. Brute force je teoreticky důkladnější, ale u dlouhých hesel bývá v praxi velmi časově náročný.</p>
+
+                        <h3>Jak se proti útokům na hesla bránit</h3>
+                        <p>Základem ochrany je používat dlouhá a jedinečná hesla, ideálně ve formě heslových frází. Důležité je také nepoužívat jedno heslo na více službách, protože pokud unikne na jednom místě, útočník ho může zkusit i jinde. Významnou ochranu představuje také vícefaktorové ověření, protože samotná znalost hesla pak útočníkovi nestačí.</p>
+                        <p>Na straně systémů pomáhá například omezení počtu pokusů o přihlášení, časové prodlevy mezi pokusy, dočasné blokování účtu nebo sledování podezřelé aktivity. Ve firemním prostředí je důležité také bezpečné ukládání hesel, například ve formě hashů, aby se v případě úniku nedostala ven v čitelné podobě.</p>
+
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">Rozhodni, zda jde o brute force, nebo dictionary attack.</p>
+
+                    <p>Útočník zkouší při přihlášení postupně velké množství různých kombinací znaků bez ohledu na to, jestli dávají smysl jako běžné heslo.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="a">
+                        <h3 class="task-answer-title">Jde o brute force, nebo dictionary attack?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q1" value="a"><span>a) brute force</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q1" value="b"><span>b) dictionary attack</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Útočník používá seznam často používaných hesel, jmen, běžných slov a jejich jednoduchých variant.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="b">
+                        <h3 class="task-answer-title">Jde o brute force, nebo dictionary attack?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q2" value="a"><span>a) brute force</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q2" value="b"><span>b) dictionary attack</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Při útoku se zkouší například hesla jako heslo123, admin2024, skola123 nebo jméno uživatele s rokem narození.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="b">
+                        <h3 class="task-answer-title">Jde o brute force, nebo dictionary attack?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q3" value="a"><span>a) brute force</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q3" value="b"><span>b) dictionary attack</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Systém automaticky testuje kombinace typu a1, a2, a3, pak delší varianty a pokračuje dál, dokud něco nevyjde.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="a">
+                        <h3 class="task-answer-title">Jde o brute force, nebo dictionary attack?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q4" value="a"><span>a) brute force</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q4" value="b"><span>b) dictionary attack</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Útočník nezkouší všechny možné varianty, ale hlavně takové, které si lidé často volí sami.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="b">
+                        <h3 class="task-answer-title">Jde o brute force, nebo dictionary attack?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q5" value="a"><span>a) brute force</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p1-q5" value="b"><span>b) dictionary attack</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">Vyber heslo nebo situaci, která je vůči útokům na hesla nejslabší / nejrizikovější.</p>
+
+                    <p>Které heslo je nejsnáze odhadnutelné?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Které heslo je vůči těmto útokům nejslabší?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q1" value="a"><span>a) M0je_kolo_jezdi_rychle!</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q1" value="b"><span>b) PesBeziPoLouce_27</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q1" value="c"><span>c) filip2007</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q1" value="d"><span>d) Tramvaj_Jede_V_6_Rano</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Které heslo bude nejspíš úspěšně napadeno slovníkovým útokem?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Které heslo je vůči těmto útokům nejslabší?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q2" value="a"><span>a) fotbal123</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q2" value="b"><span>b) SnihPadaNaStrom_92</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q2" value="c"><span>c) MujPesMaRadejiRanoCaj</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q2" value="d"><span>d) Kolo!Most!Dum!Reka!</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Která možnost je nejrizikovější?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Které heslo je vůči těmto útokům nejslabší?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q3" value="a"><span>a) delší heslová fráze složená z více slov</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q3" value="b"><span>b) stejné krátké heslo použité na více službách</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q3" value="c"><span>c) jedinečné heslo uložené ve správci hesel</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p2-q3" value="d"><span>d) dlouhé heslo s neobvyklou strukturou</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <p class="task-answer-instruction">Vyber opatření, které by proti danému útoku nebo riziku pomohlo nejvíc.</p>
+
+                    <p>Útočník se snaží během krátké doby vyzkoušet mnoho přihlášení na jeden účet. Co by pomohlo nejvíc?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Jaká obrana by pomohla nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q1" value="a"><span>a) automatické zvětšení písma na webu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q1" value="b"><span>b) omezení počtu pokusů a dočasné blokování přihlášení</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q1" value="c"><span>c) změna barvy přihlašovacího tlačítka</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q1" value="d"><span>d) vypnutí historie prohlížeče</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Útočník získal správné heslo, ale nemá přístup k telefonu s autentizační aplikací. Co útok nejvíc ztíží?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Jaká obrana by pomohla nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q2" value="a"><span>a) delší uživatelské jméno</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q2" value="b"><span>b) vícefaktorové ověření</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q2" value="c"><span>c) tmavý režim systému</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q2" value="d"><span>d) vypnutí aktualizací</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel si chce snížit riziko, že jeho heslo bude úspěšné při dictionary attack. Co je nejlepší?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Jaká obrana by pomohla nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q3" value="a"><span>a) používat běžné slovo a jen přidat 123</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q3" value="b"><span>b) vytvořit delší jedinečnou heslovou frázi</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q3" value="c"><span>c) používat stejné heslo všude</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q3" value="d"><span>d) měnit heslo jen tehdy, když na to zapomene</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce chce ztížit automatizované zkoušení mnoha přihlášení. Které opatření dává smysl?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Jaká obrana by pomohla nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q4" value="a"><span>a) CAPTCHA nebo časové prodlevy mezi pokusy</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q4" value="b"><span>b) vypnutí firewallu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q4" value="c"><span>c) zakázání aktualizací</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k8-p3-q4" value="d"><span>d) odstranění antiviru</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>

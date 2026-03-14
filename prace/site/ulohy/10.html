@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPv4 nebo IPv6? – Sítě</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../index.html" class="active">Sítě</a>
+            <a href="../../kyberbezpecnost/index.html">Kyberbezpečnost</a>
+        </nav>
+        <a class="user"><img src="../../assets/main/user.png" width="24" height="24" alt=""></a>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Sítě</a>
+                <span>/</span>
+                <span class="task-name">IPv4 nebo IPv6?</span>
+            </nav>
+
+            <h1>IPv4 nebo IPv6?</h1>
+            <p class="task-desc">Rozhodni, která adresa je IPv4 a která IPv6.</p>
+            <h3 class="task-difficulty medium">Středně těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">IPv4 a IPv6</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Sítě a privátní</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Bity a binární</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <p>
+                        Každé zařízení připojené k síti musí mít svou <strong>IP adresu</strong> (Internet Protocol address). Slouží k jednoznačné identifikaci zařízení v síti a umožňuje směrování dat mezi nimi. V současnosti se používají dvě hlavní verze: <strong>IPv4</strong> a <strong>IPv6</strong>.
+                    </p>
+                    <h3>Dělení sítí podle velikosti</h3>
+                    <p>
+                        Sítě se podle rozsahu a účelu dělí na:
+                    </p>
+                    <ul>
+                        <li><strong>PAN</strong> (Personal Area Network) — osobní síť na velmi malou vzdálenost (např. Bluetooth mezi mobilem a sluchátky).</li>
+                        <li><strong>LAN</strong> (Local Area Network) — lokální síť v budově nebo domácnosti (např. domácí WiFi, kancelářská síť).</li>
+                        <li><strong>MAN</strong> (Metropolitan Area Network) — síť městského rozsahu (např. síť poskytovatele v jednom městě).</li>
+                        <li><strong>WAN</strong> (Wide Area Network) — rozlehlá síť přes větší území nebo celý svět (internet, propojení poboček).</li>
+                    </ul>
+                    <p>Čím větší síť, tím víc zařízení a složitější směrování; v LAN se často používají privátní IP adresy, na internetu (WAN) pak veřejné.</p>
+                    <h3>IPv4</h3>
+                    <p>
+                        <strong>IPv4</strong> (Internet Protocol version 4) je starší a dosud nejrozšířenější verze. Používá <strong>32bitovou</strong> adresu, která se zapisuje jako čtyři čísla oddělená tečkami. Příklad: <code>192.168.1.1</code>. Každé číslo může mít hodnotu 0–255 (jeden bajt = 8 bitů). IPv4 umožňuje přibližně 4,3 miliardy adres, což se ukázalo jako nedostatečné pro rostoucí počet zařízení na internetu.
+                    </p>
+                    <p>
+                        Protože jeden oktet je jeden bajt (8 bitů), lze IPv4 adresu zapsat i <strong>binárně</strong> — každé číslo 0–255 jako 8 bitů (0 a 1). Např. adresa <code>10.0.0.0</code>: číslo 10 v desítkové soustavě je v binární <code>00001010</code>, nula je <code>00000000</code>. Celá adresa pak: <code>00001010.00000000.00000000.00000000</code>. Stejně tak 255 = <code>11111111</code> (všech 8 bitů jednička). Celých 32 bitů tak tvoří čtyři osmiciferné skupiny oddělené tečkou.
+                    </p>
+                    <p>
+                        <strong>Jak se to počítá:</strong> U 8 bitů má každá pozice (zleva doprava) svoji váhu: <strong>128, 64, 32, 16, 8, 4, 2, 1</strong> (to jsou mocniny dvojky: 2<sup>7</sup> až 2<sup>0</sup>). Kde je jednička (1), tu váhu započítáš; kde je nula (0), ne. Součet vah dá desítkové číslo. Příklad: <code>00001010</code> → pouze na pozicích 8 a 2 jsou jedničky → 8 + 2 = <strong>10</strong>. Obráceně: číslo 10 rozložíš na součet těchto vah (10 = 8 + 2), na příslušná místa napíšeš 1, jinak 0 → <code>00001010</code>. Číslo 255 používá všechny váhy (128+64+32+16+8+4+2+1 = 255), proto <code>11111111</code>.
+                    </p>
+                    <h3>Veřejné a privátní IPv4 adresy</h3>
+                    <p>
+                        <strong>Veřejné</strong> IP adresy jsou jedinečné na celém internetu a přidělují je poskytovatelé internetu. <strong>Privátní</strong> adresy se používají pouze v lokálních sítích (LAN) a nejsou směrovány přímo na internet; pro přístup ven se používá NAT (Network Address Translation).
+                    </p>
+                    <p>Privátní IPv4 adresy jsou rozděleny do tří bloků:</p>
+                    <table class="task-table">
+                        <thead>
+                            <tr><th>Rozsah</th><th>Použití</th><th>Třída</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>10.0.0.0 – 10.255.255.255</td><td>velké soukromé sítě</td><td>A</td></tr>
+                            <tr><td>172.16.0.0 – 172.31.255.255</td><td>středně velké sítě</td><td>B</td></tr>
+                            <tr><td>192.168.0.0 – 192.168.255.255</td><td>domácí a malé sítě</td><td>C</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Např. adresa <code>192.168.1.200</code> je typická privátní IP v domácí síti.</p>
+                    <h3>IPv6</h3>
+                    <p>
+                        <strong>IPv6</strong> (Internet Protocol version 6) je novější verze, zavedená hlavně kvůli nedostatku IPv4 adres. Používá <strong>128bitové</strong> adresy — obrovské množství unikátních adres. Zapisuje se jako osm skupin hexadecimálních čísel oddělených dvojtečkami.
+                    </p>
+                    <p>Příklad: <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>. Nuly lze zkrátit, např. <code>2001:db8::7334</code> (dvojité dvojtečky <code>::</code> zastupují sekvenci nul).</p>
+                    <p><strong>Výhody IPv6:</strong> výrazně větší adresní prostor, jednodušší konfigurace (např. SLAAC), lepší podpora zabezpečení, efektivnější směrování. Díky velkému počtu adres může mít každé zařízení vlastní veřejnou IP, což snižuje potřebu NAT.</p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">Téma: rozlišení IPv4 a IPv6. Vyber správnou odpověď.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Která adresa je IPv4?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q1" value="a"><span>a. 192.168.1.1</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q1" value="b"><span>b. 2001:db8:a0b:12f0::1</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q1" value="c"><span>c. 2001:db8::1</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q1" value="d"><span>d. 2001:db8:85a3::8a2e:370:7334</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Která adresa je IPv6?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q2" value="a"><span>a. 10.0.0.1</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q2" value="b"><span>b. 255.255.255.0</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q2" value="c"><span>c. 2001:db8::ff00</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q2" value="d"><span>d. 172.16.0.1</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Kolik bitů má IPv4 adresa?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q3" value="a"><span>a. 64</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q3" value="b"><span>b. 128</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q3" value="c"><span>c. 32</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q3" value="d"><span>d. 16</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Kolik bitů má IPv6 adresa?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q4" value="a"><span>a. 32</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q4" value="b"><span>b. 64</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q4" value="c"><span>c. 128</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q4" value="d"><span>d. 256</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co znamená zápis :: v IPv6 adrese?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q5" value="a"><span>a. Chyba v adrese</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q5" value="b"><span>b. Zkratka za sekvenci nul</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q5" value="c"><span>c. Oddělovač oktetů</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q5" value="d"><span>d. Označení privátní adresy</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Proč se zavádí IPv6?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q6" value="a"><span>a. IPv4 nepodporuje WiFi</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q6" value="b"><span>b. IPv4 adresy docházejí, IPv6 jich nabízí mnohem víc</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q6" value="c"><span>c. IPv4 je příliš složité</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p1-q6" value="d"><span>d. IPv4 neumí směrování</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">Téma: typy sítí (PAN, LAN, MAN, WAN) a privátní/veřejné adresy. Vyber správnou odpověď.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co znamená zkratka LAN?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q1" value="a"><span>a. Long Area Network</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q1" value="b"><span>b. Local Area Network</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q1" value="c"><span>c. Large Access Network</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q1" value="d"><span>d. Link Address Node</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Síť městského rozsahu se označuje zkratkou:</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q2" value="a"><span>a. LAN</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q2" value="b"><span>b. WAN</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q2" value="c"><span>c. MAN</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q2" value="d"><span>d. PAN</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Která adresa je privátní a má třídu C?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q3" value="a"><span>a. 8.8.8.8</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q3" value="b"><span>b. 192.168.0.1</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q3" value="c"><span>c. 217.75.128.10</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q3" value="d"><span>d. 1.1.1.1</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Který rozsah je vyhrazen pro domácí a malé sítě?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q4" value="a"><span>a. 10.0.0.0 – 10.255.255.255</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q4" value="b"><span>b. 172.16.0.0 – 172.31.255.255</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q4" value="c"><span>c. 192.168.0.0 – 192.168.255.255</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q4" value="d"><span>d. 8.8.8.8 – 8.8.8.8</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">K čemu slouží NAT?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q5" value="a"><span>a. K překladu doménových jmen na IP</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q5" value="b"><span>b. K překladu privátní IP na veřejnou při přístupu na internet</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q5" value="c"><span>c. K šifrování dat</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q5" value="d"><span>d. K směrování pouze v LAN</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Kdo přiděluje veřejné IP adresy?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q6" value="a"><span>a. Domácí router</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q6" value="b"><span>b. Uživatel si ji nastaví sám</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q6" value="c"><span>c. Poskytovatel internetu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p2-q6" value="d"><span>d. DHCP server v domácí síti</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <p class="task-answer-instruction">Téma: binární zápis a bajty. Vyber správnou odpověď.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Kolik bitů má jeden oktet v IPv4 adrese?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q1" value="a"><span>a. 4</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q1" value="b"><span>b. 32</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q1" value="c"><span>c. 8</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q1" value="d"><span>d. 16</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Číslo 255 v desítkové soustavě je v binární (8 bitů):</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q2" value="a"><span>a. 11111111</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q2" value="b"><span>b. 00000000</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q2" value="c"><span>c. 10101010</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q2" value="d"><span>d. 255</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Číslo 10 (desítkově) v binární soustavě (8 bitů) je:</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q3" value="a"><span>a. 00001010</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q3" value="b"><span>b. 00010000</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q3" value="c"><span>c. 10100000</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q3" value="d"><span>d. 10</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Celá IPv4 adresa má kolik bitů?</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q4" value="a"><span>a. 8</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q4" value="b"><span>b. 16</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q4" value="c"><span>c. 32</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q4" value="d"><span>d. 64</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Každé číslo 0–255 v IPv4 představuje:</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q5" value="a"><span>a. 1 bit</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q5" value="b"><span>b. 1 bajt (8 bitů)</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q5" value="c"><span>c. 2 bajty</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q5" value="d"><span>d. 4 bity</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Binární zápis 00000000 (8 bitů) představuje v desítkové soustavě:</h3>
+                        <div class="task-answer-header"><span class="task-answer-label">Odpověď</span><span class="task-answer-attempts">2/2</span></div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q6" value="a"><span>a. 1</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q6" value="b"><span>b. 255</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q6" value="c"><span>c. 0</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-10-p3-q6" value="d"><span>d. 256</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>

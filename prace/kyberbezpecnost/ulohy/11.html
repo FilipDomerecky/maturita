@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šifrování a ochrana dat – Kyberbezpečnost</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../../site/index.html">Sítě</a>
+            <a href="../index.html" class="active">Kyberbezpečnost</a>
+        </nav>
+        <a class="user"><img src="../../assets/main/user.png" width="24" height="24" alt=""></a>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Kyberbezpečnost</a>
+                <span>/</span>
+                <span class="task-name">Šifrování a ochrana dat</span>
+            </nav>
+
+            <h1>Šifrování a ochrana dat</h1>
+            <p class="task-desc">Symetrické a asymetrické šifrování, hash.</p>
+            <h3 class="task-difficulty hard">Těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Co odpovídá popisu?</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Nejlepší vysvětlení</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Praktické situace</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    
+                        <p>Šifrování je způsob ochrany dat, při kterém se čitelná informace převádí do podoby, které bez správného klíče není možné snadno porozumět. Používá se k ochraně soukromí, přenosu citlivých údajů i ukládání dat. Díky šifrování lze zajistit, že se k obsahu zprávy, souboru nebo komunikace dostanou jen oprávněné osoby. Se šifrováním úzce souvisí také hashování, které sice neslouží přímo k utajení obsahu, ale je důležité pro ověřování integrity dat a bezpečné ukládání hesel.</p>
+
+                        <h3>Historické šifry</h3>
+                        <p>Šifrování není nový vynález moderní doby. Lidé se snažili chránit informace už ve starověku a středověku. Jedním z nejznámějších příkladů je Caesarova šifra, která posouvala každé písmeno v textu o několik míst v abecedě. Slovo se tak změnilo na jiný text, který na první pohled nedával smysl. Tento princip je dnes už velmi slabý, ale je dobrým příkladem toho, jak šifrování funguje.</p>
+                        <p>Později vznikaly i složitější šifry, například Vigenèrova šifra, která používala více posunů podle klíčového slova, a ve 20. století například známý německý stroj Enigma. Historické šifry jsou dnes důležité hlavně jako ukázka vývoje kryptografie. Pro skutečné zabezpečení moderních systémů už nestačí, protože jejich prolomení je při dnešních možnostech poměrně snadné.</p>
+
+                        <h3>Symetrické šifrování</h3>
+                        <p>Symetrické šifrování používá stejný klíč pro zašifrování i dešifrování dat. To znamená, že odesílatel i příjemce musí znát tentýž tajný klíč. Výhodou tohoto přístupu je hlavně rychlost a efektivita. Symetrické šifry jsou proto vhodné například pro šifrování velkého objemu dat, disků, archivů nebo části síťové komunikace.</p>
+                        <p>Nevýhodou je ale problém s předáním klíče. Pokud si dvě strany potřebují bezpečně předat stejný tajný klíč, vzniká otázka, jak to udělat bez rizika, že ho někdo zachytí. Právě to je hlavní slabina symetrického šifrování. Mezi známé moderní příklady patří například AES, který se používá velmi často a patří mezi nejrozšířenější šifrovací algoritmy současnosti. Starším příkladem je například DES nebo 3DES, které dnes mají spíše historický význam.</p>
+
+                        <h3>Asymetrické šifrování</h3>
+                        <p>Asymetrické šifrování používá dva klíče — veřejný a soukromý. Veřejný klíč může být známý komukoli, zatímco soukromý klíč zná jen vlastník. Data zašifrovaná veřejným klíčem lze dešifrovat jen odpovídajícím soukromým klíčem. Tento princip řeší problém bezpečného předání klíče a umožňuje i digitální podpisy.</p>
+                        <p>Výhodou asymetrického šifrování je pohodlnější správa klíčů a možnost ověřovat identitu nebo podepisovat data. Nevýhodou je nižší rychlost oproti symetrickému šifrování. Proto se asymetrické šifrování často nepoužívá na šifrování velkých objemů dat, ale spíše na výměnu klíčů, digitální podpisy nebo zabezpečení začátku komunikace. Mezi známé příklady patří RSA nebo ECC. V praxi se často kombinuje asymetrické i symetrické šifrování — například při navazování zabezpečeného spojení se asymetricky dohodne klíč a samotná data se pak šifrují symetricky.</p>
+
+                        <h3>Hashování</h3>
+                        <p>Hash neboli hashovací funkce není totéž co šifrování. Hashování převádí vstupní data na krátký otisk pevné nebo předem dané délky. Důležité je, že hashovací funkce je jednosměrná — z výsledného hashe by nemělo být možné jednoduše získat původní data. Pokud se změní byť jen malá část vstupu, výsledný hash bude jiný.</p>
+                        <p>Hash se používá hlavně k ověřování integrity dat, tedy zda nebyla změněna, a také k bezpečnějšímu ukládání hesel. Systém by ideálně neměl ukládat heslo přímo, ale jen jeho hash. Při přihlášení pak znovu vypočítá hash zadaného hesla a porovná ho s uloženou hodnotou. Mezi známé hashovací funkce patří například SHA-256. Naopak starší funkce jako MD5 nebo SHA-1 už nejsou pro bezpečnostní použití považovány za dostatečně bezpečné.</p>
+
+                        <h3>Kde se šifrování používá</h3>
+                        <p>Šifrování se používá v mnoha běžných situacích, i když si to uživatel často ani neuvědomuje. Patří sem například HTTPS při prohlížení webu, šifrování komunikace v aplikacích, ochrana souborů, šifrování disků v počítačích a mobilech nebo bezpečné ukládání hesel. Díky tomu mohou být data chráněna při přenosu i při uložení.</p>
+
+                        <h3>Výhody a nevýhody</h3>
+                        <p>Šifrování má velkou výhodu v tom, že chrání citlivá data před neoprávněným přístupem. Pomáhá zajistit soukromí, bezpečný přenos informací a ochranu uložených souborů. U asymetrických metod navíc umožňuje i ověření identity a digitální podpisy. Hashování zase pomáhá ověřit, že data nebyla změněna.</p>
+                        <p>Nevýhodou může být vyšší složitost, potřeba správné správy klíčů a v některých případech i výkonová náročnost. Pokud uživatel ztratí šifrovací klíč nebo heslo, může se stát, že se ke svým datům už nedostane ani on sám. U špatně navrženého systému může být problém i v tom, že je sice použité silné šifrování, ale klíče jsou špatně uložené nebo spravované.</p>
+
+                        <h3>Budoucnost a kvantová oblast</h3>
+                        <p>S rozvojem výpočetní techniky se mění i oblast kryptografie. Velkým tématem do budoucna jsou kvantové počítače, které by jednou mohly ohrozit některé dnešní asymetrické algoritmy. Proto se už dnes vyvíjí takzvaná postkvantová kryptografie, tedy algoritmy navržené tak, aby odolaly i budoucím kvantovým útokům.</p>
+                        <p>Vedle toho se někdy mluví i o kvantové kryptografii, která využívá principy kvantové fyziky, například při bezpečné distribuci klíčů. Zatím jde ale spíše o specializovanou oblast než o běžnou součást každodenního používání internetu. Pro běžnou praxi je dnes důležitější rozumět klasickému šifrování a vědět, proč se postupně přechází na odolnější algoritmy.</p>
+                    
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">Vyber možnost, která nejlépe odpovídá popisu.</p>
+
+                    <p>Dvě strany používají stejný klíč pro zašifrování i dešifrování zprávy.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co nejlépe odpovídá popisu?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q1" value="a"><span>a) hash</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q1" value="b"><span>b) symetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q1" value="c"><span>c) asymetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q1" value="d"><span>d) digitální podpis</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel zašifruje data veřejným klíčem příjemce a ten je potom rozšifruje svým soukromým klíčem.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Co nejlépe odpovídá popisu?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q2" value="a"><span>a) symetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q2" value="b"><span>b) hashování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q2" value="c"><span>c) asymetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q2" value="d"><span>d) Caesarova šifra</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Systém neukládá původní heslo, ale jen jeho jednosměrně vytvořený otisk.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Co nejlépe odpovídá popisu?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q3" value="a"><span>a) hash</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q3" value="b"><span>b) symetrická šifra</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q3" value="c"><span>c) otevřený text</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q3" value="d"><span>d) segmentace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Algoritmus je rychlý a hodí se pro šifrování velkého objemu dat, ale je nutné bezpečně sdílet tajný klíč.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Co nejlépe odpovídá popisu?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q4" value="a"><span>a) hash</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q4" value="b"><span>b) asymetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q4" value="c"><span>c) symetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q4" value="d"><span>d) VLAN</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Metoda se používá i k digitálním podpisům a ověřování identity.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Co nejlépe odpovídá popisu?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q5" value="a"><span>a) asymetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q5" value="b"><span>b) Caesarova šifra</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q5" value="c"><span>c) hash bez dalšího použití</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p1-q5" value="d"><span>d) komprese</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">Vyber nejlepší vysvětlení.</p>
+
+                    <p>Proč je symetrické šifrování často rychlejší?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q1" value="a"><span>a) používá kratší internet</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q1" value="b"><span>b) pracuje s jedním sdíleným klíčem</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q1" value="c"><span>c) nevyužívá žádný klíč</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q1" value="d"><span>d) ukládá hesla v čitelné podobě</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Jaká je hlavní nevýhoda symetrického šifrování?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q2" value="a"><span>a) nelze jím šifrovat soubory</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q2" value="b"><span>b) problém je bezpečné předání klíče</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q2" value="c"><span>c) funguje jen offline</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q2" value="d"><span>d) neumí pracovat s textem</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Proč se asymetrické šifrování nepoužívá vždy na všechna data?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q3" value="a"><span>a) bývá pomalejší</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q3" value="b"><span>b) nepracuje s klíči</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q3" value="c"><span>c) neumí chránit komunikaci</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q3" value="d"><span>d) funguje jen v historii</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Proč hash není totéž co šifra?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q4" value="a"><span>a) hash je vždy veřejný text</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q4" value="b"><span>b) hash se má používat jen ve škole</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q4" value="c"><span>c) hash je jednosměrný</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q4" value="d"><span>d) hash potřebuje dva klíče</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Proč je změna jednoho znaku v souboru důležitá při kontrole hashe?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber nejlepší vysvětlení</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q5" value="a"><span>a) hash zůstane stejný</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q5" value="b"><span>b) výsledek se má změnit</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q5" value="c"><span>c) soubor se smaže</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p2-q5" value="d"><span>d) zrychlí se internet</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <p class="task-answer-instruction">Vyber nejvhodnější metodu pro danou situaci.</p>
+
+                    <p>Firma chce rychle zašifrovat velký archiv dat uložený na disku.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Praktické situace</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q1" value="a"><span>a) symetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q1" value="b"><span>b) asymetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q1" value="c"><span>c) hash</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q1" value="d"><span>d) Caesarova šifra</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel si stáhne soubor a chce ověřit, zda nebyl po cestě změněn.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Praktické situace</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q2" value="a"><span>a) použije hash</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q2" value="b"><span>b) vypne firewall</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q2" value="c"><span>c) změní PIN</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q2" value="d"><span>d) otevře port</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Web při navazování zabezpečeného spojení potřebuje bezpečně vyřešit výměnu klíče.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Praktické situace</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q3" value="a"><span>a) asymetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q3" value="b"><span>b) Caesarova šifra</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q3" value="c"><span>c) jen hash</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q3" value="d"><span>d) komprese</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce chce uložit hesla uživatelů tak, aby je neukládal přímo v čitelné podobě.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Praktické situace</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q4" value="a"><span>a) hashování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q4" value="b"><span>b) jen ZIP archiv</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q4" value="c"><span>c) otevřený text</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q4" value="d"><span>d) segmentace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel chce poslat zprávu tak, aby ji mohl rozšifrovat jen příjemce svým soukromým klíčem.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Praktické situace</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q5" value="a"><span>a) symetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q5" value="b"><span>b) asymetrické šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q5" value="c"><span>c) hash</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k11-p3-q5" value="d"><span>d) MD5 bez ničeho dalšího</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>
