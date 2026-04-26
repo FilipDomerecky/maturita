@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Útoky na síť a služby – Kyberbezpečnost</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../../site/index.html">Sítě</a>
+            <a href="../index.html" class="active">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Kyberbezpečnost</a>
+                <span>/</span>
+                <span class="task-name">Útoky na síť a služby</span>
+            </nav>
+
+            <h1>Útoky na síť a služby</h1>
+            <p class="task-desc">DoS, DDoS, man-in-the-middle.</p>
+            <h3 class="task-difficulty easy">Lehká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Na co útok cílí?</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Jaký bude důsledek?</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <h2 class="task-open-title">Útoky na síť a dostupnost služeb</h2>
+                    <p>
+                        Na rozdíl od útoků, které míří přímo na soubory v počítači, se některé hrozby zaměřují hlavně na
+                        <strong>síťovou komunikaci</strong> a <strong>dostupnost služeb</strong>. Jejich cílem může být
+                        zpomalit nebo úplně vyřadit web, server či jinou síťovou službu, případně zachytit data
+                        přenášená mezi dvěma stranami.
+                    </p>
+                    <p>
+                        Tyto útoky jsou nebezpečné tím, že mohou ovlivnit <strong>velké množství uživatelů najednou</strong>
+                        a narušit samotné fungování sítě. Ochrana proto musí řešit nejen koncová zařízení, ale i to,
+                        <strong>jak je síť a služby navržené a zabezpečené</strong>.
+                    </p>
+
+                    <h3>DoS a DDoS – útok na dostupnost</h3>
+                    <p>
+                        Útoky typu <strong>DoS</strong> a <strong>DDoS</strong> 
+                        míří především na <strong>dostupnost služby</strong>. Server nebo síťová služba jsou
+                        <strong>zahlceny velkým množstvím požadavků</strong>, takže nestíhají odpovídat běžným uživatelům.
+                        Výsledkem může být výrazné zpomalení nebo úplná nedostupnost webu či aplikace.
+                    </p>
+                    <ul>
+                        <li><strong>DoS</strong> – útok přichází typicky z <strong>jednoho zdroje</strong>.</li>
+                        <li><strong>DDoS</strong> – útok je veden z <strong>mnoha zařízení najednou</strong> (např. z botnetu),
+                            proto je silnější a hůře se blokuje.</li>
+                    </ul>
+                    <p>
+                        Obrana zahrnuje filtrování provozu, monitoring, omezení počtu požadavků z jednoho zdroje
+                        a správné nastavení síťových prvků nebo specializovaných ochranných služeb.
+                    </p>
+
+                    <h3>Man-in-the-middle – útok na komunikaci</h3>
+                    <p>
+                        Útok <strong>man-in-the-middle</strong> (člověk uprostřed) se nezaměřuje na vyřazení služby,
+                        ale na <strong>samotný přenos dat</strong>. Útočník se snaží dostat mezi dvě komunikující strany,
+                        aby mohl komunikaci <strong>odposlouchávat</strong> nebo <strong>měnit</strong>.
+                    </p>
+                    <p>
+                        K takové situaci může dojít například na <strong>nezabezpečené Wi‑Fi</strong>, při
+                        <strong>podvržení síťové komunikace</strong> nebo v kombinaci s jinými útoky
+                        (např. phishingem či DNS spoofingem, které oběť přesměrují na podvržené místo).
+                    </p>
+                    <p>
+                        Důležitou obranou je šifrované připojení (<strong>HTTPS</strong>), používání
+                        <strong>VPN</strong>, ověřené a důvěryhodné sítě a kontrola platnosti certifikátu webu.
+                    </p>
+
+                    <h3>Jak se proti těmto útokům bránit</h3>
+                    <ul>
+                        <li>správný návrh a konfigurace sítě (firewally, filtrování provozu, monitoring),</li>
+                        <li>používání šifrované komunikace (HTTPS, VPN),</li>
+                        <li>omezení zbytečně otevřených služeb a portů,</li>
+                        <li>spolupráce s poskytovatelem připojení nebo specializovanou DDoS ochranou u větších služeb.</li>
+                    </ul>
+                    <p>
+                        Ochrana sítě tedy nespočívá jen v antiviru na počítači, ale i ve <strong>správně navrženém
+                        a zabezpečeném síťovém provozu</strong>.
+                    </p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p>
+                        Firemní web je během dne opakovaně velmi pomalý a část uživatelů se na něj vůbec nedostane. Analýza ukáže prudké nárůsty provozu, ale databáze ani uživatelské účty nebyly změněny.
+                    </p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Na co útok primárně cílí?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="a"><span>a. dostupnost služby</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="b"><span>b. důvěrnost komunikace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="c"><span>c. integritu komunikace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <p>
+                        Uživatel se přihlásil do školního systému z veřejné sítě. Později správce zjistil, že někdo cizí získal údaje přenášené během spojení, i když samotný server nebyl přetížen ani napaden.
+                    </p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Na co útok primárně cílí?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="a"><span>a. dostupnost služby</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="b"><span>b. důvěrnost komunikace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="c"><span>c. integritu komunikace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <p>
+                        Dvě zařízení spolu běžně komunikují, ale útočník po cestě mění část přenášených dat, takže příjemce dostává jiný obsah, než odesílatel skutečně poslal.
+                    </p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Na co útok primárně cílí?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="a"><span>a. dostupnost služby</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="b"><span>b. důvěrnost komunikace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="c"><span>c. integritu komunikace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <p>
+                        Server stále běží, ale velká část legitimních požadavků je odmítnuta nebo se zpracuje až po dlouhé době kvůli obrovskému množství provozu.
+                    </p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Na co útok primárně cílí?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="a"><span>a. dostupnost služby</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="b"><span>b. důvěrnost komunikace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="c"><span>c. integritu komunikace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p>
+                        Na jednu veřejně dostupnou část webu chodí z krátkého časového úseku neobvykle mnoho požadavků z jedné IP adresy. Cílem je snížit riziko, že jeden zdroj přetíží službu.
+                    </p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Jaké opatření je v dané situaci nejvhodnější?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="a"><span>a. omezení počtu požadavků</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="b"><span>b. filtrování a analýza provozu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="c"><span>c. HTTPS, VPN a důvěryhodná síť</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="d"><span>d. monitoring síťových anomálií</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <p>
+                        Správce potřebuje rozlišit běžný nárůst návštěvnosti od útoku a včas odhalit podezřelé chování v síti.
+                    </p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="d">
+                        <h3 class="task-answer-title">Jaké opatření je v dané situaci nejvhodnější?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="a"><span>a. omezení počtu požadavků</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="b"><span>b. filtrování a analýza provozu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="c"><span>c. HTTPS, VPN a důvěryhodná síť</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="d"><span>d. monitoring síťových anomálií</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <p>
+                        Uživatel musí pracovat s citlivými údaji mimo domov a připojuje se přes veřejnou Wi-Fi síť. Hlavním cílem je zabránit odposlechu přenášených dat.
+                    </p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Jaké opatření je v dané situaci nejvhodnější?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="a"><span>a. omezení počtu požadavků</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="b"><span>b. filtrování a analýza provozu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="c"><span>c. HTTPS, VPN a důvěryhodná síť</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="d"><span>d. monitoring síťových anomálií</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <p>
+                        Na server přichází velké množství provozu z různých zdrojů a je potřeba část z něj odfiltrovat ještě předtím, než zatíží samotnou aplikaci.
+                    </p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Jaké opatření je v dané situaci nejvhodnější?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="a"><span>a. omezení počtu požadavků</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="b"><span>b. filtrování a analýza provozu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="c"><span>c. HTTPS, VPN a důvěryhodná síť</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="d"><span>d. monitoring síťových anomálií</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <p>
+                        Správce nechce jen útok zpětně zjistit, ale chce už při návrhu služby omezit možnost, aby jeden klient během krátké chvíle odesílal extrémní počet požadavků.
+                    </p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Jaké opatření je v dané situaci nejvhodnější?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="a"><span>a. omezení počtu požadavků</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="b"><span>b. filtrování a analýza provozu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="c"><span>c. HTTPS, VPN a důvěryhodná síť</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k2-p2-q1" value="d"><span>d. monitoring síťových anomálií</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+</body>
+</html>

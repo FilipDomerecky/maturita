@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Základní protokoly – Sítě</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../index.html" class="active">Sítě</a>
+            <a href="../../kyberbezpecnost/index.html">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Sítě</a>
+                <span>/</span>
+                <span class="task-name">Základní protokoly</span>
+            </nav>
+
+            <h1>Základní protokoly</h1>
+            <p class="task-desc">Poznáš, k čemu slouží FTP, SSH nebo HTTP?</p>
+            <h3 class="task-difficulty easy">Lehká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">kvíz</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">doplnění vět</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">zkratky protokolů</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <p>
+                        V síti spolu zařízení komunikují podle předem dohodnutých pravidel. Těmto pravidlům se říká
+                        <strong>protokoly</strong>. Bez nich by si zařízení nerozuměla — každý protokol určuje formát zpráv,
+                        pořadí kroků a jak reagovat na chyby. V této lekci se seznámíš s několika základními protokoly,
+                        které potkáš na každém síťovém zařízení.
+                    </p>
+
+                    <h3>Co je to protokol?</h3>
+                    <p>
+                        Protokol je soubor pravidel, podle kterých probíhá komunikace mezi zařízeními. Definuje např.
+                        jak mají vypadat zprávy, v jakém pořadí se posílají, jak se ověřuje doručení nebo jak se řeší
+                        chyby. Protokoly se často vrství — např. HTTP běží nad TCP, TCP nad IP. Díky tomu může každá
+                        vrstva řešit jen svůj úkol.
+                    </p>
+
+                    <p>
+                        Mezi protokoly patří i <strong>DNS</strong> a <strong>DHCP</strong>, které jsi mohl poznat v předchozí lekci.
+                    </p>
+
+                    <h3>HTTP a HTTPS</h3>
+                    <p>
+                        <strong>HTTP</strong> (HyperText Transfer Protocol) je protokol pro přenos webových stránek mezi
+                        prohlížečem a serverem. Data se přenášejí v nešifrované podobě. <strong>HTTPS</strong> je jeho
+                        zabezpečená varianta — komunikace je šifrovaná, takže ji někdo na síti
+                        nemůže snadno odposlechnout. Dnes je HTTPS u webových stránek považován za standard
+                    </p>
+
+                    <h3>FTP (File Transfer Protocol)</h3>
+                    <p>
+                        FTP slouží k <strong>přenosu souborů</strong> mezi klientem a serverem (nahrávání nebo stahování).
+                        Používá se např. při správě webu pro nahrávání stránek na server. Existuje i zabezpečená varianta
+                        SFTP (SSH File Transfer Protocol), která data šifruje.
+                    </p>
+
+                    <h3>SSH (Secure Shell)</h3>
+                    <p>
+                        SSH umožňuje <strong>zabezpečené přihlášení a ovládání počítače na dálku</strong>. K počítači se můžeš tímto způsobem připojit buď v příkazové řádce pokud umíš příkazy
+                        nebo v GUI aplikace, kterou si stáhneš nicméně většina operačních systémů již SSH má a bude ti stačit pouze doinstalovat balíček pro server na počítači kam se chceš připojit.
+                        Veškerá komunikace je šifrovaná, starší nešifrovaná alternativa je Telnet, která se dnes kvůli bezpečnosti nedoporučuje. Používá se pro správu serverů, přístup k routeru nebo práce na vzdáleném pc.
+                    </p>
+
+                    <h3>TCP a UDP</h3>
+                    <p>
+                        <strong>TCP</strong> (Transmission Control Protocol) zajišťuje spolehlivý přenos dat — kontroluje,
+                        zda všechna data dorazila, a znovu posílá ztracené části. Používá se tam, kde na úplnosti záleží
+                        (web, e-mail). <strong>UDP</strong> (User Datagram Protocol) data nekontroluje a neopakuje — je
+                        rychlejší, ale méně spolehlivý. Hodí se pro streamování videa nebo hlasu, kde občasná ztráta
+                        nevadí tolik jako zpoždění.
+                    </p>
+
+                    <h3>ICMP (Internet Control Message Protocol)</h3>
+                    <p>
+                        <strong>ICMP</strong> slouží k <strong>diagnostice a hlášení chyb</strong> v síti. Nepřenáší uživatelská data,
+                        ale zprávy mezi zařízeními — např. zda je cíl dostupný nebo zda došlo k chybě při doručování paketu.
+                        Typicky ho využívá příkaz <strong>ping</strong>, kterým můžeš ověřit, zda je jiné zařízení v síti
+                        dosažitelné a jaká je odezva. Příkaz <strong>traceroute</strong> nebo <em>tracert</em> ve Windows a <strong>mtr</strong> (My Traceroute) v linuxu
+                        pak pomocí ICMP zobrazí cestu paketů k cíli.
+                    </p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">K čemu slouží HTTPS oproti HTTP?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q1" value="a">
+                                <span>a. Zrychluje načítání stránek</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q1" value="b">
+                                <span>b. Šifruje komunikaci mezi prohlížečem a serverem</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q1" value="c">
+                                <span>c. Převádí domény na IP adresy</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q1" value="d">
+                                <span>d. Přenáší e-maily</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Který protokol se typicky používá pro přenos souborů na server?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q2" value="a">
+                                <span>a. FTP</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q2" value="b">
+                                <span>b. HTTP</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q2" value="c">
+                                <span>c. DNS</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q2" value="d">
+                                <span>d. DHCP</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">K čemu slouží SSH?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q3" value="a">
+                                <span>a. K přenosu webových stránek</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q3" value="b">
+                                <span>b. K automatickému přidělování IP adres</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q3" value="c">
+                                <span>c. K zabezpečenému přihlášení a ovládání počítače na dálku</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q3" value="d">
+                                <span>d. K odesílání e-mailů</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Příkaz ping využívá protokol ICMP. K čemu slouží?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q5" value="a">
+                                <span>a. K diagnostice zařízení v síti </span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q5" value="b">
+                                <span>b. K přenosu souborů</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q5" value="c">
+                                <span>c. K šifrování webu</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q5" value="d">
+                                <span>d. K přidělování IP adres</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Který protokol je vhodnější pro streamování videa — TCP nebo UDP?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q6" value="a">
+                                <span>a. TCP — musí být všechna data kompletní</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q6" value="b">
+                                <span>b. UDP — menší zpoždění je důležitější než občasná ztráta</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-2-q6" value="c">
+                                <span>c. Oba stejně</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <div class="task-answer-block task-answer-block--fill">
+                        <h3 class="task-answer-title">Doplň</h3>
+                        <p class="task-answer-instruction">Klikni na slovo a pak na mezeru, nebo naopak. Chceš-li slovo změnit, klikni na vyplněnou mezeru. Až doplníš vše, klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-fill-sentences">
+                            <p>Pro přenos webových stránek slouží protokol <span class="task-fill-gap" data-correct="HTTP"></span> a jeho šifrovaná varianta se jmenuje <span class="task-fill-gap" data-correct="HTTPS"></span>.</p>
+                            <p><span class="task-fill-gap" data-correct="TCP"></span> zajišťuje spolehlivý přenos dat, <span class="task-fill-gap" data-correct="UDP"></span> je rychlejší ale bez kontroly doručení.</p>
+                            <p>Příkaz <span class="task-fill-gap" data-correct="ping"></span> používá protokol ICMP k ověření dostupnosti zařízení v síti.</p>
+                        </div>
+                        <p class="task-fill-words-label">Slova k doplnění:</p>
+                        <div class="task-fill-words">
+                            <span class="task-fill-word" data-value="HTTP">HTTP</span>
+                            <span class="task-fill-word" data-value="HTTPS">HTTPS</span>
+                            <span class="task-fill-word" data-value="TCP">TCP</span>
+                            <span class="task-fill-word" data-value="UDP">UDP</span>
+                            <span class="task-fill-word" data-value="ping">ping</span>
+                            <span class="task-fill-word" data-value="FTP">FTP</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+
+
+                <section class="task-panel" id="panel-uloha3">
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="HTTPS|https">
+                        <h3 class="task-answer-title">Jaká zkratka označuje zabezpečený protokol pro přenos webových stránek?</h3>
+                        <p class="task-answer-instruction">Napiš zkratku protokolu.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="FTP|ftp">
+                        <h3 class="task-answer-title">Jak se jmenuje protokol pro přenos souborů mezi klientem a serverem?</h3>
+                        <p class="task-answer-instruction">Napiš zkratku protokolu.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="ICMP|icmp">
+                        <h3 class="task-answer-title">Který protokol využívá příkaz ping pro diagnostiku sítě?</h3>
+                        <p class="task-answer-instruction">Napiš zkratku protokolu.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="SSH|ssh">
+                        <h3 class="task-answer-title">Jaká zkratka označuje protokol pro zabezpečené přihlášení a ovládání počítače na dálku?</h3>
+                        <p class="task-answer-instruction">Napiš zkratku protokolu.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+    <script src="../../assets/task-fill.js"></script>
+</body>
+</html>

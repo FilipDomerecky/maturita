@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrstvy OSI modelu – Sítě</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../index.html" class="active">Sítě</a>
+            <a href="../../kyberbezpecnost/index.html">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Sítě</a>
+                <span>/</span>
+                <span class="task-name">Vrstvy OSI modelu</span>
+            </nav>
+
+            <h1>Vrstvy OSI modelu</h1>
+            <p class="task-desc">Dokážeš správně seřadit/přiřadit funkce vrstvám OSI modelu?</p>
+            <h3 class="task-difficulty easy">Lehká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">doplň</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">napiš číslo vrstvy</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <p>
+                        OSI model (Open Systems Interconnection) je referenční model, který rozděluje síťovou komunikaci
+                        do sedmi vrstev. Každá vrstva má svou konkrétní funkci a využívá služby vrstvy pod sebou.
+                        Data při komunikaci postupně procházejí všemi vrstvami modelu — při odesílání od aplikační k fyzické vrstvě a při příjmu opačným směrem.
+                    </p>
+                    <figure class="task-osi-figure">
+                        <img src="../../assets/tasks/osi model.png" alt="OSI model" width="280" height="180">
+                    </figure>
+                    <p>Model slouží hlavně k:</p>
+                    <ul>
+                        <li>lepšímu pochopení fungování sítí</li>
+                        <li>návrhu síťových technologií</li>
+                        <li>diagnostice problémů (lze určit, ve které vrstvě chyba vzniká)</li>
+                    </ul>
+                    <p>
+                        V praxi se dnes často používá jednodušší TCP/IP model, který má pouze čtyři vrstvy, ale OSI model
+                        se stále využívá při výuce a popisu síťových technologií.
+                    </p>
+                    <p>
+                        Vrstvy se obvykle uvádějí od nejvyšší (nejblíže aplikaci) k nejnižší (fyzickému přenosu dat).
+                    </p>
+
+                    <h3>7. Aplikační vrstva (Application)</h3>
+                    <p>
+                        Nejvyšší vrstva OSI modelu, která poskytuje služby přímo aplikacím a uživatelům.
+                    </p>
+                    <p>Patří sem například protokoly:</p>
+                    <ul>
+                        <li>HTTP / HTTPS (web)</li>
+                        <li>FTP (přenos souborů)</li>
+                        <li>SMTP, IMAP (e-mail)</li>
+                        <li>DNS</li>
+                        <li>SSH</li>
+                    </ul>
+                    <p>
+                        Aplikace zde komunikují se sítí — například webový prohlížeč posílá HTTP požadavek na server.
+                    </p>
+
+                    <h3>6. Prezentační vrstva (Presentation)</h3>
+                    <p>
+                        Tato vrstva se stará o formát a reprezentaci dat. Zajišťuje například:
+                    </p>
+                    <ul>
+                        <li>převod datových formátů</li>
+                        <li>kompresi dat</li>
+                        <li>šifrování a dešifrování</li>
+                    </ul>
+                    <p>
+                        Díky této vrstvě si mohou aplikace rozumět i tehdy, když používají různé formáty dat nebo znakové sady.
+                    </p>
+
+                    <h3>5. Relační vrstva (Session)</h3>
+                    <p>
+                        Relační vrstva spravuje komunikační relaci mezi dvěma zařízeními.
+                    </p>
+                    <p>Zajišťuje například:</p>
+                    <ul>
+                        <li>navázání spojení</li>
+                        <li>jeho udržování během komunikace</li>
+                        <li>ukončení relace</li>
+                    </ul>
+                    <p>
+                        Používá se například při dlouhodobé komunikaci mezi klientem a serverem.
+                    </p>
+
+                    <h3>4. Transportní vrstva (Transport)</h3>
+                    <p>
+                        Transportní vrstva zajišťuje přenos dat mezi aplikacemi na koncových zařízeních.
+                    </p>
+                    <p>Jejím úkolem je například:</p>
+                    <ul>
+                        <li>rozdělení dat na menší části (segmenty)</li>
+                        <li>kontrola doručení</li>
+                        <li>případná opětovná retransmise ztracených dat</li>
+                        <li>řízení toku dat</li>
+                    </ul>
+                    <p>Využíva porty a mezi nejznámějšími protokoly této vrstvy jsou TCP a UDP.
+                    </p>
+
+                    <h3>3. Síťová vrstva (Network)</h3>
+                    <p>
+                        Síťová vrstva zajišťuje adresování a směrování paketů mezi různými sítěmi.
+                    </p>
+                    <p>Používá například:</p>
+                    <ul>
+                        <li>IP adresy</li>
+                        <li>protokol IP</li>
+                    </ul>
+                    <p>
+                        Zařízení, která pracují na této vrstvě, jsou například routery, které rozhodují, kudy bude paket v síti pokračovat.
+                    </p>
+
+                    <h3>2. Linková vrstva (Data Link)</h3>
+                    <p>
+                        Linková vrstva zajišťuje přenos dat mezi zařízeními v jedné lokální síti.
+                    </p>
+                    <p>Pracuje například s:</p>
+                    <ul>
+                        <li>MAC adresami</li>
+                        <li>rámci (frames)</li>
+                    </ul>
+                    <p>Patří sem technologie jako:</p>
+                    <ul>
+                        <li>Ethernet</li>
+                        <li>Wi-Fi</li>
+                    </ul>
+                    <p>
+                        Zařízení, která pracují na této vrstvě, jsou například switche.
+                    </p>
+
+                    <h3>1. Fyzická vrstva (Physical)</h3>
+                    <p>
+                        Nejnižší vrstva OSI modelu zajišťuje samotný fyzický přenos bitů.
+                    </p>
+                    <p>Definuje například:</p>
+                    <ul>
+                        <li>typy kabelů</li>
+                        <li>konektory</li>
+                        <li>elektrické nebo optické signály</li>
+                        <li>přenosovou rychlost</li>
+                    </ul>
+                    <p>
+                        Na této vrstvě pracují například huby nebo síťové kabely.
+                    </p>
+
+                    <h3>Pomůcka pro zapamatování</h3>
+                    <p>
+                        Pořadí vrstev (od 7. k 1.) si lze zapamatovat například pomocí anglické pomůcky:
+                    </p>
+                    <p><em><strong>A</strong>ll <strong>P</strong>eople <strong>S</strong>eem <strong>T</strong>o <strong>N</strong>eed <strong>D</strong>ata <strong>P</strong>rocessing</em></p>
+                    
+                </section>
+                
+                <section class="task-panel" id="panel-uloha2">
+                    <div class="task-answer-block task-answer-block--fill">
+                        <h3 class="task-answer-title">Doplň názvy vrstev</h3>
+                        <p class="task-answer-instruction">Klikni na slovo a pak na mezeru, nebo naopak. Chceš-li slovo změnit, klikni na vyplněnou mezeru. Až doplníš vše, klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-fill-sentences">
+                            <p>Protokol IP a směrování paketů patří do <span class="task-fill-gap" data-correct="síťové"></span> vrstvy.</p>
+                            <p>MAC adresy a rámce používá vrstva <span class="task-fill-gap" data-correct="linková"></span>.</p>
+                            <p>Nejnižší vrstva, která zajišťuje přenos bitů po kabelu, se nazývá vrstva <span class="task-fill-gap" data-correct="fyzická"></span>.</p>
+                        </div>
+                        <p class="task-fill-words-label">Slova k doplnění:</p>
+                        <div class="task-fill-words">
+                            <span class="task-fill-word" data-value="síťové">síťové</span>
+                            <span class="task-fill-word" data-value="linková">linková</span>
+                            <span class="task-fill-word" data-value="fyzická">fyzická</span>
+                            <span class="task-fill-word" data-value="aplikační">aplikační</span>
+                            <span class="task-fill-word" data-value="transportní">transportní</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="4|4.">
+                        <h3 class="task-answer-title">Napiš číslo vrstvy OSI modelu, na které pracují protokoly TCP a UDP.</h3>
+                        <p class="task-answer-instruction">Napiš číslici (1–7).</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="3|3.">
+                        <h3 class="task-answer-title">Napiš číslo vrstvy, na které pracují routery a protokol IP.</h3>
+                        <p class="task-answer-instruction">Napiš číslici (1–7).</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="7|7.">
+                        <h3 class="task-answer-title">HTTP a FTP patří do které vrstvy? Napiš její číslo.</h3>
+                        <p class="task-answer-instruction">Napiš číslici (1–7).</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="1|1.">
+                        <h3 class="task-answer-title">Nejnižší vrstva (kabely, hub) má jaké číslo?</h3>
+                        <p class="task-answer-instruction">Napiš číslici (1–7).</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+</body>
+</html>

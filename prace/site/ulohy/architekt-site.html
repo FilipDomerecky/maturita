@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architekt sítě – Sítě</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../index.html" class="active">Sítě</a>
+            <a href="../../kyberbezpecnost/index.html">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Sítě</a>
+                <span>/</span>
+                <span class="task-name">Architekt sítě</span>
+            </nav>
+
+            <h1>Architekt sítě</h1>
+            <p class="task-desc">Poznej jednotlivé topologie a jejich výhody i nevýhody.</p>
+            <h3 class="task-difficulty easy">Lehká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">obrázky topologií</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">kvíz</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">napiš název topologie</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <p>
+                        <strong>Topologie sítě</strong> určuje, jak jsou zařízení fyzicky nebo logicky propojena.
+                        Volba topologie ovlivňuje spolehlivost, výkon a náklady na síť. Rozlišujeme topologie na
+                        fyzické (skutečné zapojení kabelů) a logické (jak data putují).
+                    </p>
+
+                    <h3>Sběrnice (bus)</h3>
+                    <p>
+                        Všechna zařízení jsou připojena na jeden společný koaxiální kabel (sběrnici). Data putují po celé
+                        délce — každé zařízení je přijme, zpracuje jen ta určená jemu. <br><strong>Výhody:</strong> jednoduché
+                        zapojení, málo kabeláže, snadné přidání stanice. <br><strong>Nevýhody:</strong> přerušení kabelu
+                        vyřadí celou síť, při velkém provozu kolize a zpomalení, obtížná lokalizace závady.<br>
+                        <strong>Dnes se v kabelových LAN sítích prakticky nepoužívá</strong> — byla typická pro starý Ethernet.
+                    </p>
+
+                    <h3>Hvězda (star)</h3>
+                    <p>
+                        Každé zařízení je připojeno k centrálnímu prvku (např. switch). Veškerá komunikace
+                        prochází přes střed. <br><strong>Výhody:</strong> výpadek jednoho kabelu nebo stanice neohrozí zbytek sítě,
+                        snadná údržba a rozšíření, dobrý výkon.<br> <strong>Nevýhody:</strong> závislost na centrálním prvku
+                        (jeho výpadek paralyzuje síť).<br>
+                        <strong>Dnes se běžně používá</strong> — je základem většiny lokálních sítí.
+                    </p>
+
+                    <h3>Kruh (ring)</h3>
+                    <p>
+                        Zařízení tvoří uzavřený okruh — data obíhají v jednom směru.
+                        Každý uzel předává rámec dalšímu. <br><strong>Výhody:</strong> rovnoměrné zatížení, žádné kolize,
+                        předvídatelný přenos. <br><strong>Nevýhody:</strong> přerušení kruhu může zastavit celou síť (u
+                        odolnějších variant se provoz při výpadku zařízení jednoduše přesměruje druhou stranou kruhu), přidání nebo odebrání uzlu vyžaduje přerušení okruhu.<br>
+                        <strong>Používá se spíše výjimečně</strong> — např. v některých průmyslových nebo páteřních sítích. Známým příkladem byla technologie Token Ring.
+                    </p>
+
+                    <h3>Strom (tree)</h3>
+                    <p>
+                        Hierarchická struktura — z jednoho kořenového uzlu se větví další uzly, ty se zase větví.
+                        Dalo by se tedy říct, že je to vlastně hierarchická struktura složená z více hvězdicových segmentů. <br><strong>Výhody:</strong> škálovatelnost, oddělení segmentů,
+                        vhodné pro větší sítě. <br><strong>Nevýhody:</strong> závislost na kořenových prvcích, při poruše
+                        vyšší úrovně může odpadnout celá větev.<br>
+                        <strong>Používá se</strong> u větších sítí a u poskytovatelů připojení (hierarchie routerů).
+                    </p>
+
+                    <h3>Síť (mesh)</h3>
+                    <p>
+                        Zařízení jsou propojena mnoha cestami — každý uzel může být spojen s několika dalšími
+                        (částečná mesh) nebo se všemi (úplná mesh). <br><strong>Výhody:</strong> vysoká odolnost proti
+                        výpadkům, redundantní cesty, možnost vybrat nejvhodnější trasu. <br> <strong>Nevýhody:</strong> velké
+                        množství kabelů a portů, vyšší náklady a složitější správa.<br>
+                        <strong>Používá se</strong> u Wi‑Fi mesh systémů, páteřních sítí a v datových centrech.
+                    </p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">U každého obrázku napiš, o jakou topologii jde.</p>
+
+                    <figure class="task-topology-figure">
+                        <img src="../../assets/tasks/bus.png" alt="Topologie sítě" width="280" height="180">
+                    </figure>
+                    <div class="task-answer-block task-answer-block--image" data-max-attempts="5" data-correct="sbernice|bus">
+                        <h3 class="task-answer-title">Jaká je to topologie?</h3>
+                        <p class="task-answer-instruction">Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Napiš název topologie" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <figure class="task-topology-figure">
+                        <img src="../../assets/tasks/star.png" alt="Topologie sítě" width="280" height="180">
+                    </figure>
+                    <div class="task-answer-block task-answer-block--image" data-max-attempts="5" data-correct="hvezda|star">
+                        <h3 class="task-answer-title">Jaká je to topologie?</h3>
+                        <p class="task-answer-instruction">Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Napiš název topologie" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <figure class="task-topology-figure">
+                        <img src="../../assets/tasks/ring.png" alt="Topologie sítě" width="280" height="180">
+                    </figure>
+                    <div class="task-answer-block task-answer-block--image" data-max-attempts="5" data-correct="kruh|ring">
+                        <h3 class="task-answer-title">Jaká je to topologie?</h3>
+                        <p class="task-answer-instruction">Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Napiš název topologie" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <figure class="task-topology-figure">
+                        <img src="../../assets/tasks/tree.png" alt="Topologie sítě" width="280" height="180">
+                    </figure>
+                    <div class="task-answer-block task-answer-block--image" data-max-attempts="5" data-correct="strom|tree">
+                        <h3 class="task-answer-title">Jaká je to topologie?</h3>
+                        <p class="task-answer-instruction">Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Napiš název topologie" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <figure class="task-topology-figure">
+                        <img src="../../assets/tasks/p_mesh.png" alt="Topologie sítě" width="280" height="180">
+                    </figure>
+                    <div class="task-answer-block task-answer-block--image" data-max-attempts="5" data-correct="castecna mesh">
+                        <h3 class="task-answer-title">Jaká je to topologie?</h3>
+                        <p class="task-answer-instruction">Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Napiš název topologie" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <figure class="task-topology-figure">
+                        <img src="../../assets/tasks/mesh.png" alt="Topologie sítě" width="280" height="180">
+                    </figure>
+                    <div class="task-answer-block task-answer-block--image" data-max-attempts="5" data-correct="sit|mesh">
+                        <h3 class="task-answer-title">Jaká je to topologie?</h3>
+                        <p class="task-answer-instruction">Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Napiš název topologie" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a" data-name="4-q1">
+                        <h3 class="task-answer-title">Která topologie se dnes v kabelových LAN sítích prakticky nepoužívá?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q1" value="a">
+                                <span>a. Sběrnice</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q1" value="b">
+                                <span>b. Hvězda</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q1" value="c">
+                                <span>c. Kruh</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q1" value="d">
+                                <span>d. Síť (mesh)</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">U které topologie je každé zařízení připojeno k centrálnímu prvku?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q2" value="a">
+                                <span>a. Sběrnice</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q2" value="b">
+                                <span>b. Hvězda</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q2" value="c">
+                                <span>c. Kruh</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q2" value="d">
+                                <span>d. Strom</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">U které topologie data obíhají v uzavřeném okruhu a každý uzel předává rámec dalšímu?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q3" value="a">
+                                <span>a. Sběrnice</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q3" value="b">
+                                <span>b. Hvězda</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q3" value="c">
+                                <span>c. Kruh</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q3" value="d">
+                                <span>d. Síť (mesh)</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="d">
+                        <h3 class="task-answer-title">Která topologie má hierarchickou strukturu složenou z více hvězdicových segmentů?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q4" value="a">
+                                <span>a. Sběrnice</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q4" value="b">
+                                <span>b. Kruh</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q4" value="c">
+                                <span>c. Síť (mesh)</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q4" value="d">
+                                <span>d. Strom</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Která topologie nabízí redundantní cesty a vysokou odolnost proti výpadkům?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q5" value="a">
+                                <span>a. Sběrnice</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q5" value="b">
+                                <span>b. Kruh</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q5" value="c">
+                                <span>c. Síť (mesh)</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q5" value="d">
+                                <span>d. Hvězda</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">U které topologie přerušení kabelu vyřadí celou síť?</h3>
+                        <p class="task-answer-instruction">Vyber jednu možnost a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q6" value="a">
+                                <span>a. Sběrnice</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q6" value="b">
+                                <span>b. Hvězda</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q6" value="c">
+                                <span>c. Strom</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-4-q6" value="d">
+                                <span>d. Síť (mesh)</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="hvezda|star">
+                        <h3 class="task-answer-title">Která topologie je základem většiny dnešních lokálních sítí?</h3>
+                        <p class="task-answer-instruction">Napiš název topologie. Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="sbernice|bus">
+                        <h3 class="task-answer-title">Všechna zařízení jsou na jednom společném kabelu. O jakou topologii jde?</h3>
+                        <p class="task-answer-instruction">Napiš název topologie. Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="sit|mesh">
+                        <h3 class="task-answer-title">U které topologie jsou uzly propojeny mnoha cestami a používá se např. u Wi‑Fi mesh systémů?</h3>
+                        <p class="task-answer-instruction">Napiš název topologie. Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="strom|tree">
+                        <h3 class="task-answer-title">Hierarchická struktura, vhodná pro větší sítě a poskytovatele připojení. O jakou topologii jde?</h3>
+                        <p class="task-answer-instruction">Napiš název topologie. Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="5" data-correct="kruh|ring">
+                        <h3 class="task-answer-title">Data obíhají v uzavřeném okruhu, známým příkladem byla technologie Token Ring. O jakou topologii jde?</h3>
+                        <p class="task-answer-instruction">Napiš název topologie. Odpověď piš malými písmeny bez diakritiky.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">5/5</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Vaše odpověď" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>

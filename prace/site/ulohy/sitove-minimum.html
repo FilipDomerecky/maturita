@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Síťové minimum – Sítě</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../index.html" class="active">Sítě</a>
+            <a href="../../kyberbezpecnost/index.html">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Sítě</a>
+                <span>/</span>
+                <span class="task-name">Síťové minimum</span>
+            </nav>
+
+            <h1>Síťové minimum</h1>
+            <p class="task-desc">Dokážeš zjistit, co je DHCP, IP adresa a paket?</p>
+            <h3 class="task-difficulty easy">Lehká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">kvíz</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">doplnění vět</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <p>
+                        Než se pustíš do složitějších témat, je důležité porozumět několika
+                        základním pojmům, se kterými se v sítích setkáš velmi často.
+                        V této části si stručně vysvětlíme klíčové termíny, které tvoří základ
+                        síťové komunikace a dnes se bez nich neobejdeš.
+                    </p>
+                        
+                    <p>
+                        Zaměř se především na to, k čemu jednotlivé pojmy slouží a jak spolu
+                        souvisí. Tyto znalosti se ti budou hodit i v následujících úlohách.
+                    </p>
+                    <h3>Počítačová/lokální síť</h3>
+
+                    <p>
+                    Počítačová/lokální síť je skupina zařízení (například počítače, telefony nebo servery),
+                    která jsou mezi sebou propojena tak, aby si mohla vzájemně předávat data
+                    a sdílet zdroje. Díky síti mohou zařízení komunikovat například v rámci
+                    domácnosti, školy nebo internetu. Zároveň mohou být připojeny mnoha způsoby ať už kabelem nebo bezdrátově.
+                    </p>
+
+                    <h3>Síťová karta</h3>
+                    <p>
+                    Síťová karta (NIC – Network Interface Card) je fyzická součást zařízení,
+                    která umožňuje jeho připojení do počítačové sítě. Každé zařízení, které chce
+                    v síti komunikovat, musí mít síťovou kartu — ať už kabelovou nebo bezdrátovou.
+                    </p>
+
+                    <h3>IP adresa</h3>
+
+                    <p>
+                    IP adresa je jedinečný identifikátor zařízení v síti. Funguje podobně jako
+                    poštovní adresa — podle ní síť pozná, kam mají být data doručena.
+                    Každé zařízení připojené k síti musí mít svou unikátní IP adresu, aby mohlo
+                    správně komunikovat s ostatními. Tuto adresu buď nastavujeme ručně (staticky) nebo automaticky (dynamicky) pomocí DHCP serveru.
+                    </p>
+
+                    <h3>MAC adresa</h3>
+
+                    <p>
+                    MAC adresa je jedinečný fyzický identifikátor síťového zařízení.
+                    Je pevně přiřazena síťové kartě výrobcem a používá se především
+                    pro komunikaci v rámci lokální sítě. Na rozdíl od IP adresy se
+                    běžně nemění.
+                    </p>
+
+                    <h3>Výchozí brána</h3>
+
+                    <p>
+                    Výchozí brána je zařízení v síti, které zajišťuje komunikaci s jinými sítěmi,
+                    nejčastěji s internetem. Pokud zařízení potřebuje odeslat data mimo svou
+                    lokální síť, odešle je právě na výchozí bránu (obvykle router), která je
+                    předá dál správným směrem.
+                    </p>
+                    <h3>Maska sítě</h3>
+
+                    <p>
+                    Maska sítě určuje, která část IP adresy označuje síť a která konkrétní zařízení.
+                    Díky masce dokáže zařízení poznat, zda se cílová IP adresa nachází ve stejné
+                    lokální síti, nebo zda je potřeba komunikaci odeslat přes bránu do jiné sítě.
+                    Maska se zapisuje buď ve tvaru čísel (např. 255.255.255.0), nebo pomocí prefixu
+                    (např. /24).
+                    </p>
+
+                    
+
+                    <h3>Paket</h3>
+
+                    <p>
+                    Data se po síti nepřenášejí najednou, ale jsou rozdělena na menší části,
+                    kterým se říká pakety. Každý paket se skládá ze dvou hlavních částí — hlavičky a datové části.
+                    V hlavičce jsou uloženy řídicí informace, například zdrojová a cílová IP adresa,
+                    pořadí paketu nebo další údaje potřebné pro správné doručení.
+                    Datová část pak obsahuje samotná přenášená data.<br>
+                    Na cílovém zařízení se jednotlivé pakety znovu seřadí a složí se do původní podoby
+                    přenášené informace. Jelikož mohou dorazit i v jiném pořadí, než byly odeslány.
+                    </p>
+                    <h3>Server</h3>
+
+                    <p>
+                    Server je zařízení nebo počítač, který je obvykle navržen tak, aby byl dostupný nepřetržitě a mohl
+                    poskytovat služby ostatním zařízením v síti kdykoliv jsou potřeba. Může například ukládat soubory, provozovat webové
+                    stránky nebo zajišťovat přihlašování uživatelů. Ostatní zařízení
+                    v síti (klienti) se k serveru připojují a využívají jeho služby.
+                    </p>
+
+                    <h3>Switch</h3>
+
+                    <p>
+                    Switch (přepínač) je síťové zařízení, které umožňuje propojit více zařízení
+                    v rámci jedné lokální sítě pomocí jednoho centrálního prvku. Přijatá data
+                    dokáže na základě MAC adres odeslat pouze tomu zařízení, kterému jsou určena.
+                    Díky tomu je komunikace efektivnější než u hubu.
+                    </p>
+
+                    <h3>Hub</h3>
+
+                    <p>
+                    Hub je jednodušší zařízení pro propojení zařízení v síti. Na rozdíl
+                    od switche neposílá data cíleně, ale rozesílá je všem připojeným
+                    zařízením. Z tohoto důvodu je méně efektivní a dnes se používá jen
+                    zřídka.
+                    </p>
+
+                    <h3>Ethernetový kabel</h3>
+
+                    <p>
+                    Ethernetový kabel je fyzické médium používané pro kabelové připojení
+                    zařízení do sítě. Umožňuje spolehlivý a rychlý přenos dat mezi
+                    zařízeními, například mezi počítačem a routerem nebo switchem.
+                    </p>
+
+                    <h3>DNS</h3>
+
+                    <p>
+                    DNS (Domain Name System) je služba, která převádí doménová jména
+                    na IP adresy. Uživatelé si tak nemusí pamatovat číselné IP adresy
+                    serverů a mohou používat snadno zapamatovatelné názvy, například
+                    www.seznam.cz bude stejné jako 77.75.76.3
+                    </p>
+
+                    <p>
+                    Když zadáš do prohlížeče doménové jméno, zařízení odešle dotaz na
+                    DNS server, který vyhledá odpovídající IP adresu a vrátí ji zpět.
+                    Teprve poté může zařízení navázat spojení se správným serverem.
+                    </p>
+
+                    <h3>DHCP</h3>
+
+                    <p>
+                    DHCP (Dynamic Host Configuration Protocol) je služba, která automaticky
+                    přiděluje zařízením v síti IP adresu a další potřebná nastavení (např. masku sítě, výchozí bránu, DNS servery).
+                    Díky DHCP nemusí uživatel nastavovat síť ručně — zařízení získá
+                    potřebné údaje automaticky při připojení k síti.
+                    </p>
+
+                    <h3>Router</h3>
+
+                    <p>
+                    Router je síťové zařízení, které propojuje různé sítě mezi sebou.
+                    Nejčastěji spojuje domácí nebo školní síť s internetem a zajišťuje,
+                    aby data dorazila do správné sítě. Router také často obsahuje
+                    funkce pro zabezpečení a správu síťového provozu.
+                    </p>
+
+                    <h3>GUI</h3>
+
+                    <p>
+                        GUI (Graphical User Interface) je grafické uživatelské rozhraní — ovládání programu nebo zařízení
+                        pomocí oken, ikon, tlačítek a menu místo psaní příkazů v textu. Typickým příkladem je desktop
+                        operačního systému nebo nastavení routeru v prohlížeči.
+                    </p>
+
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p><div class="task-answer-block task-answer-block--choice" data-max-attempts="2" data-correct="a" data-name="intro-choice">
+                        <h3 class="task-answer-title">Které tvrzení nejlépe vystihuje hlavní důvod existence počítačové sítě?</h3>
+                        <p class="task-answer-instruction">Vyber jednu z možností a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <!--<span class="task-answer-points">+1</span>-->
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="a">
+                                <span>Umožňuje zařízením komunikovat a sdílet zdroje</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="b">
+                                <span>Zvyšuje kapacitu RAM</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="c">
+                                <span>Nahrazuje operační systém</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="d">
+                                <span>Šifruje veškerá data</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div></p>
+                    <p><div class="task-answer-block task-answer-block--choice" data-max-attempts="2" data-correct="c" data-name="intro-choice">
+                        <h3 class="task-answer-title">Co je nutné, aby se zařízení mohlo připojit do sítě?</h3>
+                        <p class="task-answer-instruction">Vyber jednu z možností a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <!--<span class="task-answer-points">+1</span>-->
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="a">
+                                <span>Veřejná IP adresa</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="b">
+                                <span>DNS server</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="c">
+                                <span>Síťová karta</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="d">
+                                <span>Hub</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div></p>
+                    <p><div class="task-answer-block task-answer-block--choice" data-max-attempts="2" data-correct="b" data-name="intro-choice">
+                        <h3 class="task-answer-title">Jakou roli má IP adresa?</h3>
+                        <p class="task-answer-instruction">Vyber jednu z možností a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <!--<span class="task-answer-points">+1</span>-->
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="a">
+                                <span>Identifikuje kabel</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="b">
+                                <span>Identifikuje zařízení v síti</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="c">
+                                <span>Překládá domény</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="d">
+                                <span>Určuje topologii</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div></p>
+                    <p><div class="task-answer-block task-answer-block--choice" data-max-attempts="2" data-correct="c" data-name="intro-choice">
+                        <h3 class="task-answer-title">Jak se nejčastěji liší statická a dynamická IP?</h3>
+                        <p class="task-answer-instruction">Vyber jednu z možností a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <!--<span class="task-answer-points">+1</span>-->
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="a">
+                                <span>Statická je jen pro Wi-Fi</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="b">
+                                <span>Dynamická je vždy veřejná</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="c">
+                                <span>Statická se nastavuje ručně, dynamická se přiděluje automaticky</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="d">
+                                <span>Dynamická neexistuje v LAN</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div></p>
+                    <p><div class="task-answer-block task-answer-block--choice" data-max-attempts="2" data-correct="b" data-name="intro-choice">
+                        <h3 class="task-answer-title">Kde se primárně využívá MAC adresa?</h3>
+                        <p class="task-answer-instruction">Vyber jednu z možností a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <!--<span class="task-answer-points">+1</span>-->
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="a">
+                                <span>Na internetu mezi routery</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="b">
+                                <span>V lokální síti mezi zařízeními</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="c">
+                                <span>V DNS překladech</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="d">
+                                <span>V DHCP konfiguraci</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div></p>
+                    <p><div class="task-answer-block task-answer-block--choice" data-max-attempts="2" data-correct="c" data-name="intro-choice">
+                        <h3 class="task-answer-title">Co umožňuje zařízení zjistit maska sítě?</h3>
+                        <p class="task-answer-instruction">Vyber jednu z možností a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <!--<span class="task-answer-points">+1</span>-->
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="a">
+                                <span>Rychlost připojení</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="b">
+                                <span>MAC adresu routeru</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="c">
+                                <span>Zda je cílová IP ve stejné síti</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="d">
+                                <span>Název domény</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div></p>
+                    <p><div class="task-answer-block task-answer-block--choice" data-max-attempts="2" data-correct="d" data-name="intro-choice">
+                        <h3 class="task-answer-title">Kdy zařízení použije výchozí bránu?</h3>
+                        <p class="task-answer-instruction">Vyber jednu z možností a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <!--<span class="task-answer-points">+1</span>-->
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="a">
+                                <span>Při zjišťování MAC adresy</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="b">
+                                <span>Při přidělování IP</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="c">
+                                <span>Při komunikaci ve stejné síti</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="d">
+                                <span>Při komunikaci mimo lokální síť</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div></p>
+                    <p><div class="task-answer-block task-answer-block--choice" data-max-attempts="2" data-correct="c" data-name="intro-choice">
+                        <h3 class="task-answer-title">Z čeho se skládá paket?</h3>
+                        <p class="task-answer-instruction">Vyber jednu z možností a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <!--<span class="task-answer-points">+1</span>-->
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="a">
+                                <span>Jen z dat</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="b">
+                                <span>Z MAC a DNS</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="c">
+                                <span>Z hlavičky a datové části</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="d">
+                                <span>Z masky a brány</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div></p>
+                    <p><div class="task-answer-block task-answer-block--choice" data-max-attempts="2" data-correct="b" data-name="intro-choice">
+                        <h3 class="task-answer-title">Co typicky obsahuje hlavička paketu?</h3>
+                        <p class="task-answer-instruction">Vyber jednu z možností a klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <!--<span class="task-answer-points">+1</span>-->
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="a">
+                                <span>Obrázky a soubory</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="b">
+                                <span>Řídicí informace o přenosu</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="c">
+                                <span>Jen MAC adresu</span>
+                            </label>
+                            <label class="task-answer-option">
+                                <input type="radio" name="task-answer-intro-choice" value="d">
+                                <span>Jen název webu</span>
+                            </label>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div></p>
+                </section>
+                
+                <section class="task-panel" id="panel-uloha2">
+                    <div class="task-answer-block task-answer-block--fill">
+                        <h3 class="task-answer-title">Doplň</h3>
+                        <p class="task-answer-instruction">Klikni na slovo a pak na mezeru, nebo naopak – doplní se. Chceš-li slovo změnit, klikni na vyplněnou mezeru – slovo se vrátí do seznamu. Až doplníš vše, klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-fill-sentences">
+                            <p>Zařízení v síti získává <span class="task-fill-gap" data-correct="IP"></span> adresu pomocí služby <span class="task-fill-gap" data-correct="DHCP"></span>.</p>
+                            <p>Data se po síti nepřenášejí najednou, ale v menších částech zvaných <span class="task-fill-gap" data-correct="pakety"></span>.</p>
+                            <p>Služba <span class="task-fill-gap" data-correct="DNS"></span> převádí doménová jména na IP adresy.</p>
+                            <p>Data na výchozí <span class="task-fill-gap" data-correct="bránu"></span> posíláme, když je cíl v jiné síti.</p>
+                            <p><span class="task-fill-gap" data-correct="Switch"></span> využívá MAC adresy a předá rámec jen správnému zařízení.</p>
+                            <p><span class="task-fill-gap" data-correct="Maska"></span> sítě určuje, která část IP adresy patří síti a která zařízení.</p>
+                        </div>
+                        <p class="task-fill-words-label">Slova k doplnění:</p>
+                        <div class="task-fill-words">
+                            <span class="task-fill-word" data-value="IP">IP</span>
+                            <span class="task-fill-word" data-value="DHCP">DHCP</span>
+                            <span class="task-fill-word" data-value="pakety">pakety</span>
+                            <span class="task-fill-word" data-value="DNS">DNS</span>
+                            <span class="task-fill-word" data-value="router">router</span>
+                            <span class="task-fill-word" data-value="bránu">bránu</span>
+                            <span class="task-fill-word" data-value="Switch">Switch</span>
+                            <span class="task-fill-word" data-value="Maska">Maska</span>
+                            <span class="task-fill-word" data-value="server">server</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+    <script src="../../assets/task-fill.js"></script>
+</body>
+</html>

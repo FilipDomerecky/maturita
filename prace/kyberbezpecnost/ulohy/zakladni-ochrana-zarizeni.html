@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Základní ochrana zařízení – Kyberbezpečnost</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../../site/index.html">Sítě</a>
+            <a href="../index.html" class="active">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Kyberbezpečnost</a>
+                <span>/</span>
+                <span class="task-name">Základní ochrana zařízení</span>
+            </nav>
+
+            <h1>Základní ochrana zařízení</h1>
+            <p class="task-desc">Aktualizace, antivir, firewall.</p>
+            <h3 class="task-difficulty easy">Lehká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Vyber nejvhodnější opatření</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Co je hlavní problém?</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <h2 class="task-open-title">Proč chránit zařízení</h2>
+                    <p>
+                        Ochrana zařízení je jedním ze základů kybernetické bezpečnosti. Ani opatrný uživatel totiž není
+                        úplně v bezpečí, pokud používá nezabezpečený počítač nebo mobil. Mezi nejdůležitější prvky
+                        základní ochrany patří <strong>pravidelné aktualizace</strong>, <strong>antivirový program</strong>
+                        a <strong>firewall</strong>.
+                    </p>
+                    <p>
+                        Tyto nástroje pomáhají snižovat riziko napadení zařízení, zneužití chyb v systému nebo
+                        neoprávněné komunikace se sítí. V praxi ale nejde jen o to mít tyto funkce zapnuté, ale také vědět,
+                        jak fungují a k čemu skutečně slouží.
+                    </p>
+
+                    <h3>Aktualizace</h3>
+                    <p>
+                        Pravidelné aktualizace operačního systému, aplikací a prohlížeče jsou důležité hlavně proto, že
+                        opravují chyby a známé zranitelnosti. Pokud uživatel aktualizace dlouhodobě odkládá, může
+                        používat software, ve kterém jsou chyby veřejně známé a snadno zneužitelné. Útočníci často
+                        nevyužívají jen složité metody, ale právě i staré a neopravené slabiny.
+                    </p>
+                    <p>
+                        V domácím prostředí bývá nejlepší aktualizace zbytečně neodkládat a instalovat je co nejdříve.
+                        Ve firmách je ale situace složitější, protože některé aktualizace mohou způsobit problémy s
+                        kompatibilitou programů, ovladačů nebo firemních systémů. Proto se v praxi často nové aktualizace
+                        nejdříve nasazují na testovací zařízení nebo na menší skupinu počítačů a teprve po ověření
+                        nasazují do zbytku sítě.
+                    </p>
+
+                    <h3>Antivir</h3>
+                    <p>
+                        Antivirový program pomáhá odhalovat, blokovat a odstraňovat škodlivý software. Může upozornit
+                        například na nebezpečný soubor, podezřelé chování programu nebo pokus o spuštění malwaru.
+                        Antivir ale není všemocný a sám o sobě nestačí, protože nezabrání každému útoku ani nenahradí
+                        opatrné chování uživatele. Nejlépe funguje jako jedna z vrstev ochrany spolu s aktualizacemi
+                        a bezpečnými návyky.
+                    </p>
+                    <p>
+                        Dříve měl například Windows Defender poměrně špatnou pověst. Dnes je ale jeho úroveň výrazně
+                        lepší a pro běžného domácího uživatele často dostačuje, pokud je správně zapnutý a pravidelně
+                        aktualizovaný. Kromě něj existují i další známé antiviry (ESET, Avast, Bitdefender, Kaspersky,
+                        Norton…), které se liší funkcemi, náročností i cenou, ale jejich hlavní úkol je stejný — chránit
+                        zařízení před škodlivým softwarem a podezřelou aktivitou.
+                    </p>
+                    <p>
+                        V praxi se hodí i nástroje, které neslouží přímo jako klasický antivir, ale pomáhají ověřit
+                        podezřelé soubory nebo odkazy. Příkladem je služba VirusTotal, která umožňuje zkontrolovat soubor
+                        nebo URL adresu pomocí více bezpečnostních nástrojů najednou. Tyto služby ale antivir v počítači
+                        nenahrazují, spíš slouží jako doplněk.
+                    </p>
+                    <p>
+                        Antiviry většinou nenabízí jen jeden typ kontroly, ale více možností podle situace:
+                    </p>
+                    <ul>
+                        <li><strong>cílená kontrola</strong> – ověření konkrétního souboru nebo složky,</li>
+                        <li><strong>rychlá kontrola</strong> – zaměřuje se na nejčastější místa výskytu malwaru,</li>
+                        <li><strong>úplná kontrola</strong> – prochází celé zařízení, je důkladnější, ale trvá déle,</li>
+                        <li><strong>offline kontrola</strong> – proběhne ještě před spuštěním systému a malware se hůře schová.</li>
+                    </ul>
+
+                    <h3>Firewall</h3>
+                    <p>
+                        Firewall slouží ke kontrole síťové komunikace a rozhoduje, která spojení budou povolena a která
+                        zablokována. Pomáhá tak chránit zařízení před nechtěnými nebo podezřelými připojeními ze sítě.
+                        Může například zabránit tomu, aby se neznámá aplikace bez povolení připojovala k internetu, nebo
+                        aby se k zařízení připojoval někdo zvenčí.
+                    </p>
+                    <p>
+                        Firewall může mít více podob. Ve firmách se často používají fyzická síťová zařízení (např.
+                        FortiGate), která chrání celou síť a filtrují provoz mezi internetem a vnitřní sítí. Kromě toho
+                        existují i softwarové firewally, které běží přímo na konkrétním zařízení — například Windows
+                        Firewall nebo nástroje typu TinyWall.
+                    </p>
+                    <p>
+                        V praxi se často kombinuje více vrstev: firemní hardwarový firewall na okraji sítě a zároveň
+                        softwarový firewall na jednotlivých počítačích. Díky tomu je síť lépe chráněná proti různým typům
+                        neautorizované síťové komunikace.
+                    </p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">U každé situace vyber nejvhodnější opatření.</p>
+
+                    <p>Ve firmě se objevila nová bezpečnostní aktualizace systému. Správce ví, že podobné aktualizace už v minulosti způsobily problémy s jedním účetním programem, který firma používá každý den.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Co je nejvhodnější udělat?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q1" value="a"><span>a) Aktualizaci okamžitě nainstalovat na všechny počítače</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q1" value="b"><span>b) Aktualizaci úplně ignorovat</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q1" value="c"><span>c) Nejprve ji otestovat na vybraném zařízení a teprve potom nasadit do celé sítě</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q1" value="d"><span>d) Počkat několik let, až bude jisté, že funguje</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel si stáhl soubor z internetu, ale není si jistý, jestli je bezpečný. Nechce hned kontrolovat celý počítač, protože potřebuje rychle ověřit právě tento jeden soubor.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co je nejlepší volba?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q2" value="a"><span>a) Úplná kontrola celého systému</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q2" value="b"><span>b) Cílená kontrola konkrétního souboru</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q2" value="c"><span>c) Vypnutí antiviru a ruční otevření souboru</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q2" value="d"><span>d) Restart počítače bez kontroly</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Na počítači se objevují podezřelé problémy, ale běžné kontroly antiviru nic nenacházejí. Existuje podezření, že se škodlivý program po spuštění systému snaží skrývat.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Který typ kontroly dává největší smysl?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q3" value="a"><span>a) Rychlá kontrola</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q3" value="b"><span>b) Cílená kontrola jedné složky</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q3" value="c"><span>c) Offline kontrola před spuštěním systému</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q3" value="d"><span>d) Žádná kontrola, protože antivir už nic nenašel</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Domácí uživatel má aktualizovaný systém Windows a zapnutý Windows Defender. Zvažuje, jestli nutně potřebuje placený antivir.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Které tvrzení je nejpřesnější?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q4" value="a"><span>a) Windows Defender je dnes pro běžného domácího uživatele často dostačující</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q4" value="b"><span>b) Windows Defender nikdy nestačí a je nepoužitelný</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q4" value="c"><span>c) Bez placeného antiviru se Windows nedá bezpečně používat</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q4" value="d"><span>d) Antivir není potřeba vůbec, pokud má uživatel rychlý počítač</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce chce zabránit tomu, aby se neznámý program na počítači bez povolení připojoval k internetu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Který nástroj s tím souvisí nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q5" value="a"><span>a) Antivir</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q5" value="b"><span>b) Firewall</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q5" value="c"><span>c) Textový editor</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p1-q5" value="d"><span>d) Komprese souborů</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">Pro každou situaci vyber, co je hlavní problém nebo nejdůležitější zásada.</p>
+
+                    <p>Uživatel má nainstalovaný kvalitní antivir, ale několik měsíců neaktualizoval systém ani prohlížeč, protože „všechno funguje“.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co je zde hlavní problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q6" value="a"><span>a) Antivir zpomaluje počítač</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q6" value="b"><span>b) Zastaralý software může obsahovat známé zranitelnosti</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q6" value="c"><span>c) Prohlížeč se bez aktualizace nezapne</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q6" value="d"><span>d) Aktualizace jsou důležité jen pro vzhled systému</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Firma má výkonný hardwarový firewall na okraji sítě, ale na jednotlivých počítačích je vypnutý softwarový firewall.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Které tvrzení je nejlepší?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q7" value="a"><span>a) To nevadí, protože jeden firewall vždy stačí</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q7" value="b"><span>b) Je vhodné mít více vrstev ochrany, tedy síťový i lokální firewall</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q7" value="c"><span>c) Softwarový firewall je zbytečný v každé situaci</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q7" value="d"><span>d) Firewall slouží jen proti virům v přílohách</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel pravidelně spouští jen rychlou kontrolu antivirem, ale nikdy nespustí úplnou kontrolu, i když má podezření na problém ve starších souborech na disku.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Proč to nemusí stačit?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q8" value="a"><span>a) Rychlá kontrola se zaměřuje hlavně na nejčastěji ohrožené části systému</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q8" value="b"><span>b) Rychlá kontrola vždy kontroluje úplně vše</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q8" value="c"><span>c) Úplná kontrola je méně důkladná než rychlá</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q8" value="d"><span>d) Antivir neumí kontrolovat disk</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel si myslí, že když má antivir, nemusí už řešit aktualizace ani firewall.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Proč je tento přístup chybný?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q9" value="a"><span>a) Protože každé opatření řeší jinou část ochrany</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q9" value="b"><span>b) Protože antivir funguje jen bez internetu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q9" value="c"><span>c) Protože firewall automaticky aktualizuje systém</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q9" value="d"><span>d) Protože aktualizace nahrazují antivir</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce sítě stáhl nový bezpečnostní update a rovnou ho nasadil na všechny firemní stanice. Po restartu přestala části uživatelů fungovat důležitá aplikace.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Jaká zásada byla zanedbána?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q10" value="a"><span>a) Pravidelné zálohování tapety</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q10" value="b"><span>b) Testování aktualizací před plošným nasazením</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q10" value="c"><span>c) Rychlá kontrola antivirem</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k5-p2-q10" value="d"><span>d) Vypnutí monitoru při odchodu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezpečnost webových aplikací – Kyberbezpečnost</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../../site/index.html">Sítě</a>
+            <a href="../index.html" class="active">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Kyberbezpečnost</a>
+                <span>/</span>
+                <span class="task-name">Bezpečnost webových aplikací</span>
+            </nav>
+
+            <h1>Bezpečnost webových aplikací</h1>
+            <p class="task-desc">SQL injection a validace vstupů.</p>
+            <h3 class="task-difficulty hard">Těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Co je hlavní problém?</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Co by pomohlo?</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Doplň pojmy</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                        <p>Webové aplikace dnes slouží k přihlašování, objednávkám, správě účtů, práci s databází i ukládání citlivých údajů. Právě proto jsou častým cílem útoků. Bezpečnost webové aplikace nezávisí jen na serveru nebo síti, ale také na tom, jak správně zpracovává data od uživatele. Pokud aplikace bez kontroly přijímá vstupy z formulářů, URL adres nebo požadavků, může útočník zkusit vložit škodlivý obsah a zneužít chybu v jejím zpracování.</p>
+
+                        <h3>SQL injection</h3>
+                        <p>Jedním z nejznámějších útoků na webové aplikace je SQL injection. K němu dochází tehdy, když aplikace vloží vstup od uživatele přímo do databázového dotazu bez správného ošetření. Útočník pak může místo běžné hodnoty zadat upravený vstup, který změní význam SQL dotazu. V krajním případě tak může získat data z databáze, obejít přihlášení, měnit záznamy nebo je mazat. Nejde tedy jen o „divný text v poli“, ale o situaci, kdy aplikace nedokáže rozlišit běžný vstup od části databázového příkazu.</p>
+                        <p>SQL injection bývá nebezpečný hlavně proto, že databáze často obsahuje velmi citlivá data, například uživatelské účty, e-maily, objednávky nebo hesla. Pokud je aplikace špatně navržená, může jediný neověřený vstup znamenat problém pro celý systém. Typickým místem útoku bývají přihlašovací formuláře, vyhledávání, filtry nebo URL parametry. Útočník se snaží zadat takový vstup, který databázi „přesvědčí“, aby provedla něco jiného, než zamýšlel programátor.</p>
+
+                        <h3>Validace vstupů a obrana</h3>
+                        <p>Základní obranou je validace vstupů. To znamená, že aplikace musí kontrolovat, jaká data přijímá, v jakém formátu, délce a rozsahu. Pokud má pole obsahovat číslo, nemá přijmout libovolný text. Pokud má e-mail obsahovat určitou strukturu, aplikace by ji měla ověřit. Validace ale sama o sobě nestačí. U SQL injection je nejdůležitější používat parametrizované dotazy nebo prepared statements, protože ty oddělují data od samotného SQL příkazu. Díky tomu se vstup uživatele nebere jako součást dotazu, ale jen jako hodnota.</p>
+                        <p>Kromě validace je důležité i omezování práv databázového účtu, pod kterým aplikace pracuje. Webová aplikace by neměla mít větší oprávnění, než skutečně potřebuje. Pokud například aplikace jen čte určitá data, neměla by mít automaticky právo mazat celé tabulky. Tím se snižuje dopad případného útoku. Důležité je také správné ošetření chybových hlášek. Pokud aplikace při chybě vypíše příliš podrobné informace o databázi nebo dotazu, může tím útočníkovi pomoci.</p>
+
+                        <h3>Další zásady</h3>
+                        <p>Bezpečnost webových aplikací ale nespočívá jen v SQL injection. Validace vstupů pomáhá i proti dalším problémům, protože brání tomu, aby aplikace přijímala nesmyslná, škodlivá nebo neočekávaná data. Programátor by měl vždy počítat s tím, že uživatel nemusí zadat jen to, co očekává formulář, ale klidně i záměrně škodlivý obsah. Bezpečný přístup proto znamená nevěřit vstupům automaticky a všechna data kontrolovat a zpracovávat opatrně.</p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">U každé situace vyber, co je hlavní problém.</p>
+
+                    <p>Webová aplikace vezme text z formuláře a bez další kontroly ho přímo vloží do SQL dotazu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Co je v situaci hlavní problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q1" value="a"><span>a) chybí validace vstupu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q1" value="b"><span>b) server je pomalý</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q1" value="c"><span>c) databáze je moc velká</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q1" value="d"><span>d) formulář má špatnou barvu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Přihlašovací formulář při chybě vypíše přesný databázový dotaz a název tabulky.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co je v situaci hlavní problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q2" value="a"><span>a) to je užitečné pro uživatele</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q2" value="b"><span>b) chyba prozrazuje moc informací</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q2" value="c"><span>c) problém je jen v designu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q2" value="d"><span>d) jde o problém s Wi-Fi</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Aplikace očekává v poli věk jen číslo, ale přijme i libovolný text a nijak to neřeší.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co je v situaci hlavní problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q3" value="a"><span>a) jde o správné chování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q3" value="b"><span>b) chybí kontrola vstupu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q3" value="c"><span>c) jde o šifrování</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q3" value="d"><span>d) problém je ve firewallu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Databázový účet webu má právo číst, upravovat i mazat všechny tabulky, i když aplikace většinu z toho nepotřebuje.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Co je v situaci hlavní problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q4" value="a"><span>a) oprávnění jsou zbytečně široká</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q4" value="b"><span>b) je to nutné vždy</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q4" value="c"><span>c) jde jen o problém portů</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q4" value="d"><span>d) tím se zlepší výkon</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel zadává data do URL parametru a aplikace je bez ošetření používá v databázovém dotazu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co je v situaci hlavní problém?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q5" value="a"><span>a) je to bezpečné</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q5" value="b"><span>b) vzniká riziko injection</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q5" value="c"><span>c) URL nemá s bezpečností nic společného</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p1-q5" value="d"><span>d) problém vyřeší antivir</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">Vyber opatření, které by v dané situaci pomohlo nejvíc.</p>
+
+                    <p>Programátor skládá SQL dotazy spojováním textových řetězců a vstupu od uživatele.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q1" value="a"><span>a) delší heslo správce</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q1" value="b"><span>b) parametrizované dotazy</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q1" value="c"><span>c) změna domény</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q1" value="d"><span>d) vypnutí logování</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Aplikace má formulář, kam uživatel může zadat libovolně dlouhý text, i když pole má obsahovat krátký kód objednávky.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q2" value="a"><span>a) povolit ještě delší vstup</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q2" value="b"><span>b) zavést omezení formátu a délky</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q2" value="c"><span>c) skrýt tlačítko odeslat</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q2" value="d"><span>d) změnit font formuláře</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce chce snížit dopad případného útoku na databázi.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q3" value="a"><span>a) dát aplikaci plná práva</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q3" value="b"><span>b) omezit oprávnění databázového účtu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q3" value="c"><span>c) vypnout aktualizace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q3" value="d"><span>d) zrušit přihlašování</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Při chybě databáze aplikace vrací uživateli detailní technické informace.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Co by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q4" value="a"><span>a) zachovat vše beze změny</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q4" value="b"><span>b) omezit chybové výpisy</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q4" value="c"><span>c) přidat další tabulku</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q4" value="d"><span>d) zvětšit cache</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Aplikace očekává e-mailovou adresu, ale backend nijak nekontroluje formát vstupu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Co by pomohlo nejvíc?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q5" value="a"><span>a) přidat validaci vstupu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q5" value="b"><span>b) vypnout databázi</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q5" value="c"><span>c) změnit barvu tlačítka</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k12-p2-q5" value="d"><span>d) zkrátit URL</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <div class="task-answer-block task-answer-block--fill">
+                        <h3 class="task-answer-title">Doplň pojmy</h3>
+                        <p class="task-answer-instruction">Klikni na slovo a pak na mezeru (nebo naopak). Až doplníš vše, klikni na Odeslat.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-fill-sentences">
+                            <p>Kontrola dat by neměla probíhat jen na frontendu, ale i na <span class="task-fill-gap" data-correct="backend"></span>.</p>
+                            <p>Uživatel může zkusit zadat i škodlivý <span class="task-fill-gap" data-correct="vstup"></span>.</p>
+                            <p>SQL injection cílí hlavně na práci aplikace s <span class="task-fill-gap" data-correct="databází"></span>.</p>
+                            <p>Jedním z doporučených řešení jsou <span class="task-fill-gap" data-correct="prepared statements"></span>.</p>
+                            <p>Dopad útoku může snížit i <span class="task-fill-gap" data-correct="omezení"></span> práv databázového účtu.</p>
+                        </div>
+                        <p class="task-fill-words-label">Pojmy k doplnění:</p>
+                        <div class="task-fill-words">
+                            <span class="task-fill-word" data-value="backend">backend</span>
+                            <span class="task-fill-word" data-value="vstup">vstup</span>
+                            <span class="task-fill-word" data-value="databáze">databáze</span>
+                            <span class="task-fill-word" data-value="databází">databází</span>
+                            <span class="task-fill-word" data-value="prepared statements">prepared statements</span>
+                            <span class="task-fill-word" data-value="omezení">omezení</span>
+                            <span class="task-fill-word" data-value="frontend">frontend</span>
+                            <span class="task-fill-word" data-value="formulář">formulář</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+    <script src="../../assets/task-fill.js"></script>
+</body>
+</html>

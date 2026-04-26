@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autentizace a autorizace – Kyberbezpečnost</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../../site/index.html">Sítě</a>
+            <a href="../index.html" class="active">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Kyberbezpečnost</a>
+                <span>/</span>
+                <span class="task-name">Autentizace a autorizace</span>
+            </nav>
+
+            <h1>Autentizace a autorizace</h1>
+            <p class="task-desc">Hesla, biometrie, vícefaktorové ověření.</p>
+            <h3 class="task-difficulty medium">Středně těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Autentizace nebo autorizace?</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Jaký faktor?</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Je to MFA?</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+
+                        <h3>Autentizace a autorizace</h3>
+                        <p>Autentizace a autorizace patří mezi základní pojmy kybernetické bezpečnosti. Přestože spolu úzce souvisí, neznamenají totéž. Autentizace slouží k ověření, kdo se právě přihlašuje, zatímco autorizace určuje, co už tento ověřený uživatel smí dělat. Jednoduše řečeno: autentizace odpovídá na otázku „Kdo jsi?“ a autorizace na otázku „Co smíš dělat?“.</p>
+                        <p>V praxi to znamená například to, že se uživatel nejprve přihlásí do systému pomocí hesla, otisku prstu nebo jiného ověření. Tím proběhne autentizace. Teprve potom systém rozhodne, jestli může jen číst data, upravovat je, mazat je nebo spravovat celý systém. To už je autorizace. Dva uživatelé tedy mohou být úspěšně přihlášeni, ale každý může mít jiná oprávnění.</p>
+
+                        <h3>Hesla</h3>
+                        <p>Nejběžnějším způsobem autentizace jsou stále hesla. Jde o znalostní faktor, tedy něco, co uživatel zná. Heslo by mělo být dostatečně dlouhé, jedinečné a nemělo by se opakovat na více službách. Pokud se totiž jedno heslo dostane k útočníkovi, může ho zkusit i na dalších účtech. Slabá hesla, krátká hesla nebo hesla založená na osobních údajích patří mezi časté chyby.</p>
+                        <p>V praxi se dnes doporučuje používat spíše delší heslové fráze než krátká složitá hesla, která si uživatel špatně pamatuje. Důležité je také hesla bezpečně ukládat, ideálně pomocí správce hesel. Ten umožňuje používat silná a odlišná hesla bez toho, aby si je člověk musel všechna pamatovat.</p>
+
+                        <h3>Biometrie</h3>
+                        <p>Další možností autentizace je biometrie, tedy ověření podle fyzických nebo biologických znaků uživatele. Patří sem například otisk prstu, rozpoznání obličeje nebo sken duhovky. Výhodou biometrie je pohodlí a rychlost, protože uživatel nemusí nic vypisovat ani si nic pamatovat. Proto se často používá hlavně u mobilních telefonů, notebooků nebo moderních firemních zařízení.</p>
+                        <p>Biometrie ale není dokonalá. Pokud se například kompromituje heslo, může si uživatel vytvořit nové. U biometrických údajů to tak jednoduché není, protože otisk prstu nebo obličej nelze snadno „změnit“. Biometrie je proto praktická, ale obvykle je nejbezpečnější v kombinaci s dalším způsobem ověření.</p>
+
+                        <h3>Vícefaktorové ověření</h3>
+                        <p>Velmi důležitým bezpečnostním prvkem je vícefaktorové ověření, často označované jako MFA nebo někdy 2FA, pokud jde konkrétně o dva faktory. Tento způsob přihlášení kombinuje více různých typů ověření najednou. Nestačí tedy jen heslo, ale je potřeba i další potvrzení, například kód z mobilní aplikace, SMS zpráva, hardwarový klíč nebo biometrie.</p>
+                        <p>Smyslem vícefaktorového ověření je, že pokud útočník získá jeden faktor, například heslo, stále mu chybí druhý. Tím se výrazně snižuje riziko napadení účtu. V praxi je MFA velmi důležité hlavně u e-mailů, cloudových služeb, sociálních sítí, pracovních účtů nebo internetového bankovnictví.</p>
+
+                        <h3>Typy faktorů ověření</h3>
+                        <p>Autentizace se často rozděluje podle toho, na čem je založená. Nejčastěji se mluví o třech základních typech faktorů. Prvním je něco, co uživatel zná, například heslo nebo PIN. Druhým je něco, co uživatel má, například mobilní telefon, čipová karta nebo bezpečnostní klíč. Třetím je něco, čím uživatel je, tedy právě biometrie, například otisk prstu nebo obličej.</p>
+                        <p>Právě kombinace různých faktorů je důležitá. Když uživatel zadá jen heslo a potom ještě druhé heslo, nejde o skutečné vícefaktorové ověření, ale jen o dva údaje stejného typu. Skutečné MFA vzniká až tehdy, když se spojí alespoň dva různé faktory.</p>
+
+                        <h3>Zero Trust</h3>
+                        <p>Zero Trust je bezpečnostní přístup, který vychází z myšlenky „nikdy automaticky nevěř, vždy ověřuj“. Znamená to, že uživatel, zařízení ani aplikace nejsou považováni za důvěryhodné jen proto, že jsou připojeni uvnitř sítě. Každý přístup k systému nebo datům by měl být ověřen a povolen jen v nezbytném rozsahu. Zero Trust proto úzce souvisí s autentizací, autorizací, vícefaktorovým ověřením a principem minimálních oprávnění.</p>
+                        
+                        <h3>Autorizace</h3>
+                        <p>Po úspěšné autentizaci přichází na řadu autorizace, tedy rozhodnutí, k čemu má uživatel přístup. V běžném životě to může znamenat, že se žák po přihlášení dostane jen ke svým materiálům, učitel může zapisovat známky a správce systému může měnit nastavení celé aplikace. Všichni jsou autentizovaní, ale každý má jiná práva.</p>
+                        <p>Autorizace je důležitá proto, že ne každý přihlášený uživatel má mít přístup ke všemu. Kdyby měl běžný uživatel stejná oprávnění jako administrátor, znamenalo by to zbytečné bezpečnostní riziko. Proto se v praxi nastavují role a oprávnění podle toho, co kdo opravdu potřebuje.</p>
+
+                        <h3>Proč je důležité rozlišovat mezi autentizací a autorizací</h3>
+                        <p>Tyto dva pojmy spolu souvisejí, ale řeší jinou část zabezpečení. Autentizace ověřuje identitu uživatele, zatímco autorizace určuje rozsah jeho přístupu. Systém tedy nejprve zjistí, kdo se přihlašuje, a až potom rozhodne, co smí dělat. Pokud je autentizace slabá, může se útočník vydávat za někoho jiného. Pokud je špatně nastavená autorizace, může i běžný uživatel získat přístup k věcem, které mu nepatří.</p>
+
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">Rozhodni, zda jde o autentizaci, nebo autorizaci.</p>
+
+                    <p>Uživatel zadá při přihlášení své jméno a heslo, aby systém ověřil, že jde opravdu o něj.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="a">
+                        <h3 class="task-answer-title">Je to autentizace, nebo autorizace?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q1" value="a"><span>a) autentizace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q1" value="b"><span>b) autorizace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Po přihlášení může běžný zaměstnanec zobrazit jen vlastní dokumenty, zatímco vedoucí oddělení vidí i dokumenty svého týmu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="b">
+                        <h3 class="task-answer-title">Je to autentizace, nebo autorizace?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q2" value="a"><span>a) autentizace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q2" value="b"><span>b) autorizace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Aplikace po uživateli požaduje kód z mobilní aplikace, aby ověřila jeho identitu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="a">
+                        <h3 class="task-answer-title">Je to autentizace, nebo autorizace?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q3" value="a"><span>a) autentizace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q3" value="b"><span>b) autorizace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Správce systému může po přihlášení měnit nastavení serveru, zatímco běžný uživatel ne.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="b">
+                        <h3 class="task-answer-title">Je to autentizace, nebo autorizace?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q4" value="a"><span>a) autentizace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q4" value="b"><span>b) autorizace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Systém porovná otisk prstu s uloženou šablonou a podle výsledku povolí přístup do zařízení.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="a">
+                        <h3 class="task-answer-title">Je to autentizace, nebo autorizace?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q5" value="a"><span>a) autentizace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p1-q5" value="b"><span>b) autorizace</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">U každé situace vyber, jaký faktor ověření je použit.</p>
+
+                    <p>Uživatel zadává PIN kód do telefonu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Jaký faktor ověření je použit?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q1" value="a"><span>a) něco, co uživatel zná</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q1" value="b"><span>b) něco, co uživatel má</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q1" value="c"><span>c) něco, čím uživatel je</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel potvrzuje přihlášení pomocí bezpečnostního klíče v USB portu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Jaký faktor ověření je použit?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q2" value="a"><span>a) něco, co uživatel zná</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q2" value="b"><span>b) něco, co uživatel má</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q2" value="c"><span>c) něco, čím uživatel je</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Notebook se odemkne po ověření obličeje kamerou.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="c">
+                        <h3 class="task-answer-title">Jaký faktor ověření je použit?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q3" value="a"><span>a) něco, co uživatel zná</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q3" value="b"><span>b) něco, co uživatel má</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q3" value="c"><span>c) něco, čím uživatel je</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Přihlášení je dokončeno po zadání jednorázového kódu z autentizační aplikace v mobilu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Jaký faktor ověření je použit?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q4" value="a"><span>a) něco, co uživatel zná</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q4" value="b"><span>b) něco, co uživatel má</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q4" value="c"><span>c) něco, čím uživatel je</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel zadá dlouhou heslovou frázi, kterou si pamatuje.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Jaký faktor ověření je použit?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q5" value="a"><span>a) něco, co uživatel zná</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q5" value="b"><span>b) něco, co uživatel má</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p2-q5" value="c"><span>c) něco, čím uživatel je</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <p class="task-answer-instruction">Rozhodni, zda jde o skutečné vícefaktorové ověření (MFA).</p>
+
+                    <p>Uživatel zadá heslo a potom kód z autentizační aplikace v telefonu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="a">
+                        <h3 class="task-answer-title">Je to skutečné MFA?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q1" value="a"><span>a) ano, jde o MFA</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q1" value="b"><span>b) ne, nejde o MFA</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel zadá heslo a potom ještě odpoví na bezpečnostní otázku.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="b">
+                        <h3 class="task-answer-title">Je to skutečné MFA?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q2" value="a"><span>a) ano, jde o MFA</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q2" value="b"><span>b) ne, nejde o MFA</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel se přihlásí otiskem prstu a následně potvrdí přihlášení v mobilní aplikaci.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="a">
+                        <h3 class="task-answer-title">Je to skutečné MFA?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q3" value="a"><span>a) ano, jde o MFA</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q3" value="b"><span>b) ne, nejde o MFA</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel zadá dva různé heslové údaje po sobě.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="b">
+                        <h3 class="task-answer-title">Je to skutečné MFA?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q4" value="a"><span>a) ano, jde o MFA</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q4" value="b"><span>b) ne, nejde o MFA</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel zadá PIN a přiloží čipovou kartu.</p>
+                    <div class="task-answer-block task-answer-block--choice" data-max-attempts="1" data-correct="a">
+                        <h3 class="task-answer-title">Je to skutečné MFA?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">1/1</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q5" value="a"><span>a) ano, jde o MFA</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k7-p3-q5" value="b"><span>b) ne, nejde o MFA</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>

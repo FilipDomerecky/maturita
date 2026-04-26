@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak bys navrhl síť? – Sítě</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../index.html" class="active">Sítě</a>
+            <a href="../../kyberbezpecnost/index.html">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Sítě</a>
+                <span>/</span>
+                <span class="task-name">Jak bys navrhl síť?</span>
+            </nav>
+
+            <h1>Jak bys navrhl síť?</h1>
+            <p class="task-desc">Vyber správná zařízení pro daný scénář.</p>
+            <h3 class="task-difficulty hard">Těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="uloha1">Návrh sítě krok za krokem</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Adresování sítě (IP, maska)</button>
+
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-uloha1">
+                    <p><strong>Zadání:</strong> Navrhni síť pro malou firmu: 5 kancelářských PC, 1 síťová tiskárna, 1 sdílené úložiště, Wi‑Fi pro zaměstnance, oddělená Wi‑Fi pro návštěvy, přístup k internetu. Návštěvní síť nesmí vidět firemní zařízení. Postupuj podle kroků níže.</p>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="7">
+                        <h3 class="task-answer-title">Krok 1 - Kolik koncových zařízení bude v síti?</h3>
+                        <p class="task-answer-instruction">Kolik koncových zařízení musí být minimálně v této firmě připojeno do interní firemní sítě bez započítání síťových prvků a na každé wifi alespoň jedno zařízení?</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Počet zařízení" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="switch">
+                        <h3 class="task-answer-title">Krok 2 - Čím propojíme firemní LAN?</h3>
+                        <p class="task-answer-instruction">Router zajistí přístup k internetu, ale pro propojení všech zařízení ve vnitřní síti potřebujeme ještě jedno zařízení. Jak se jmenuje?</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Název zařízení" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="ap|access point">
+                        <h3 class="task-answer-title">Krok 3 - Wifi</h3>
+                        <p class="task-answer-instruction">V síti je potřeba zajistit bezdrátové připojení pro zaměstnance i návštěvy, které zařízení zároveň prodlouží dosah sítě, zatímco je příliš daleko od routeru. </p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Název zařízení" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="VLAN | VLANy">
+                        <h3 class="task-answer-title">Krok 4 - Segmentace sítě</h3>
+                        <p class="task-answer-instruction">Návštěvní síť nesmí vidět firemní zařízení. Jaká technologie nebo způsob oddělení sítí je pro to nejvhodnější?</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input"  autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="2">
+                        <h3 class="task-answer-title">Krok 5 - Kolik těchto sítí budeme potřebovat?</h3>
+                        <p class="task-answer-instruction">Pokud chceme oddělit firemní zařízení od návštěvní Wi-Fi, kolik samostatných sítí budeme minimálně potřebovat?</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input"  autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <figure class="task-figure">
+                        <img src="../../assets/tasks/site.png">
+                    </figure>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="28 | /28">
+                        <h3 class="task-answer-title">Jaký prefix je vhodný?</h3>
+                        <p class="task-answer-instruction">Jaký prefix je nejmenší možný, který tuto síť pokryje?</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="255.255.255.240 | 240">
+                        <h3 class="task-answer-title">Jaká maska odpovídá tomuto prefixu?</h3>
+                        <p class="task-answer-instruction">Napiš celou masku nebo jen poslední oktet</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="192.168.10.1 - 192.168.10.14">
+                        <h3 class="task-answer-title">Jaký je rozsah host adres?</h3>
+                        <p class="task-answer-instruction">Urči první a poslední použitelnou IP adresu pro zařízení. Použij třídu C.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Uveď ve formátu x.x.x.x - x.x.x.x" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="192.168.10.15">
+                        <h3 class="task-answer-title">Jaká je broadcast adresa? </h3>
+                        <p class="task-answer-instruction">Jaká je broadcast adresa této sítě?</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Uveď ve formátu x.x.x.x" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="2" data-correct="192.168.10.1">
+                        <h3 class="task-answer-title">Jakou adresu nastavíme jako gateway?</h3>
+                        <p class="task-answer-instruction">Router bude sloužit jako výchozí brána pro zařízení ve firemní síti.</p>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Uveď ve formátu x.x.x.x" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>

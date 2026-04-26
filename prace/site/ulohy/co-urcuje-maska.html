@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co určuje maska? – Sítě</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../index.html" class="active">Sítě</a>
+            <a href="../../kyberbezpecnost/index.html">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Sítě</a>
+                <span>/</span>
+                <span class="task-name">Co určuje maska?</span>
+            </nav>
+
+            <h1>Co určuje maska?</h1>
+            <p class="task-desc">Zjisti, co určuje maska sítě a jak ovlivňuje rozsah adres.</p>
+            <h3 class="task-difficulty medium">Středně těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Doplňovačka</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Zapiš prefix</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Zapiš masku</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                    <p>
+                        <strong>Maska sítě</strong> (subnet mask) určuje, která část IP adresy patří <strong>síti</strong> a která <strong>konkrétnímu zařízení (hostu)</strong>. Společně s IP adresou definuje rozsah adres v dané síti a tím i její velikost. Stejná logika jako u IP: pracuje se s bity a bajty.
+                    </p>
+                    <h3>Co to je</h3>
+                    <p>
+                        Maska má stejně jako IPv4 adresa <strong>32 bitů</strong> a zapisuje se stejně — čtyři čísla 0–255 oddělená tečkou. V maskách jsou ale vlevo vždy jedničky a vpravo nuly (v binárním zápisu): např. <code>255.255.255.0</code>. Jedničková část odpovídá <strong>síťové části</strong> IP adresy, nulová část <strong>části pro hosty</strong>. Číslo za lomítkem říká, kolik bitů je síťových: např. <code>192.168.1.0/24</code> znamená, že prvních 24 bitů je síť, zbytek (8 bitů) je pro hosty.
+                    </p>
+                    <h3>Jak se to počítá</h3>
+                    <p>
+                        Počet bitů pro hosty = 32 − (číslo za lomítkem). Z toho plyne <strong>počet adres pro hosty</strong>: 2<sup>(počet bitů pro hosty)</sup>, z toho dvě se obvykle nepoužívají (adresa sítě a broadcast), tedy <strong>2<sup>n − 2</sup></strong> použitelných adres. Příklad: <strong>/24</strong> → 32 − 24 = 8 bitů pro hosty → 2<sup>8</sup> = 256 adres, minus síť a broadcast → <strong>254</strong> použitelných adres. U <strong>/26</strong> je 32 − 26 = 6 bitů pro hosty → 2<sup>6</sup> − 2 = <strong>62</strong> použitelných adres. Čím větší číslo za lomítkem, tím menší síť (méně hostů).
+                    </p>
+                    <p>
+                        Převod masky na binární: <code>255.255.255.0</code> → 255 = <code>11111111</code>, 0 = <code>00000000</code> → celkem 24 jedniček a 8 nul → zápis <strong>/24</strong>. Maska <code>255.255.255.192</code> má v posledním oktetu 192 = 128+64 = <code>11000000</code>, tedy 26 jedniček → <strong>/26</strong>.
+                    </p>
+                    <h3>Jak se to využívá</h3>
+                    <p>
+                        Maska se používá k <strong>rozhodnutí, jestli je cíl ve stejné síti</strong>: počítač aplikuje masku na svou IP i na cílovou IP; pokud síťové části (ty s jedničkami v masce) souhlasí, jde o stejnou síť a paket se neposílá přes bránu, ale přímo. Dále určuje <strong>velikost sítě</strong> při návrhu (kolik zařízení může být v jedné podsíti) a používá se ve směrování. Typické hodnoty: <strong>/8</strong> (velký rozsah), <strong>/16</strong>, <strong>/24</strong> (častá domácí síť), <strong>/26</strong>, <strong>/28</strong> (menší podsítě).
+                    </p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">Doplň do vět správná slova. Klikni na mezeru, pak na slovo z nabídky. Odeslat můžeš až když jsou všechny mezery vyplněné.</p>
+                    <div class="task-answer-block task-answer-block--fill">
+                        <div class="task-answer-header"><span class="task-answer-label">Doplňovačka</span><span class="task-answer-attempts">3/3</span></div>
+                        <div class="task-fill-sentences">
+                            <p>Maska sítě určuje <span class="task-fill-gap" data-correct="síťovou"></span> část a <span class="task-fill-gap" data-correct="hostovou"></span> část IP adresy.</p>
+                            <p>Zápis s lomítkem (např. /24) se nazývá <span class="task-fill-gap" data-correct="prefix"></span>.</p>
+                            <p>Čím větší číslo za lomítkem, tím <span class="task-fill-gap" data-correct="menší"></span> síť (méně hostů).</p>
+                            <p>Podle masky se rozhoduje, zda poslat paket přímo, nebo přes <span class="task-fill-gap" data-correct="bránu"></span>.</p>
+                            <p>Maska 255.255.255.0 odpovídá prefixu <span class="task-fill-gap" data-correct="/24"></span>.</p>
+                        </div>
+                        <p class="task-fill-words-label">Slova k doplnění:</p>
+                        <div class="task-fill-words">
+                            <span class="task-fill-word" data-value="síťovou">síťovou</span>
+                            <span class="task-fill-word" data-value="hostovou">hostovou</span>
+                            <span class="task-fill-word" data-value="prefix">prefix</span>
+                            <span class="task-fill-word" data-value="menší">menší</span>
+                            <span class="task-fill-word" data-value="bránu">bránu</span>
+                            <span class="task-fill-word" data-value="/24">/24</span>
+                            <span class="task-fill-word" data-value="veřejnou">veřejnou</span>
+                            <span class="task-fill-word" data-value="/26">/26</span>
+                            <span class="task-fill-word" data-value="větší">větší</span>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">K dané masce napiš <strong>číslo prefixu</strong> (bez lomítka). Např. u masky 255.255.255.0 odpověz 24.</p>
+                    <div class="task-answer-block" data-max-attempts="3" data-correct="25">
+                        <h3 class="task-answer-title">Maska 255.255.255.128 — jaký je prefix?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Číslo prefixu (např. 24)" autocomplete="off" inputmode="numeric">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="3" data-correct="24">
+                        <h3 class="task-answer-title">Maska 255.255.255.0 — jaký je prefix?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Číslo prefixu" autocomplete="off" inputmode="numeric">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="3" data-correct="26">
+                        <h3 class="task-answer-title">Maska 255.255.255.192 — jaký je prefix?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Číslo prefixu" autocomplete="off" inputmode="numeric">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="3" data-correct="16">
+                        <h3 class="task-answer-title">Maska 255.255.0.0 — jaký je prefix?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Číslo prefixu" autocomplete="off" inputmode="numeric">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="3" data-correct="28">
+                        <h3 class="task-answer-title">Maska 255.255.255.240 — jaký je prefix?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Číslo prefixu" autocomplete="off" inputmode="numeric">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <p class="task-answer-instruction">K danému prefixu napiš <strong>masku</strong>.</p>
+                    <div class="task-answer-block" data-max-attempts="3" data-correct="255.255.255.0">
+                        <h3 class="task-answer-title">Prefix /24 — jaká je maska?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Např. 255.255.255.0" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="3" data-correct="255.255.255.192">
+                        <h3 class="task-answer-title">Prefix /26 — jaká je maska?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Např. 255.255.255.0" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="3" data-correct="255.255.0.0">
+                        <h3 class="task-answer-title">Prefix /16 — jaká je maska?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Např. 255.255.0.0" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                    <div class="task-answer-block" data-max-attempts="3" data-correct="255.255.255.240">
+                        <h3 class="task-answer-title">Prefix /28 — jaká je maska?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">3/3</span>
+                        </div>
+                        <div class="task-answer-row">
+                            <input type="text" class="task-answer-input" placeholder="Např. 255.255.255.0" autocomplete="off">
+                            <button type="button" class="task-answer-submit">Odeslat</button>
+                        </div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+    <script src="../../assets/task-fill.js"></script>
+</body>
+</html>

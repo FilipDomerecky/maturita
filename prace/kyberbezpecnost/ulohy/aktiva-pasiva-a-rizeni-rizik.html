@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktiva, pasiva a řízení rizik – Kyberbezpečnost</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/style_tasks.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">Úvod</a>
+            <a href="../../site/index.html">Sítě</a>
+            <a href="../index.html" class="active">Kyberbezpečnost</a>
+        </nav>
+    </header>
+    <main>
+        <div class="task-page">
+            <nav class="task-breadcrumb">
+                <a href="../index.html">&lt; Kyberbezpečnost</a>
+                <span>/</span>
+                <span class="task-name">Aktiva, pasiva a řízení rizik</span>
+            </nav>
+
+            <h1>Aktiva, pasiva a řízení rizik</h1>
+            <p class="task-desc">Co je aktivum (data, servery), zranitelnosti, hrozby.</p>
+            <h3 class="task-difficulty hard">Těžká úloha</h3>
+
+            <div class="task-tabs-wrap">
+                <div class="task-tabs">
+                    <button type="button" class="task-tab active" data-tab="teorie">teorie</button>
+                    <button type="button" class="task-tab" data-tab="uloha1">Pojmy</button>
+                    <button type="button" class="task-tab" data-tab="uloha2">Rozliš hrozbu a zranitelnost</button>
+                    <button type="button" class="task-tab" data-tab="uloha3">Které riziko je největší?</button>
+                </div>
+            </div>
+
+            <div class="task-content-wrap">
+                <section class="task-panel active" id="panel-teorie">
+                        <p>V kyberbezpečnosti nestačí řešit jen útoky a ochranné technologie. Nejprve je potřeba vědět, co má pro organizaci hodnotu, co může být ohroženo a jaké problémy mohou nastat. Právě s tím souvisí pojmy aktiva, hrozby, zranitelnosti a řízení rizik. Tyto pojmy pomáhají popsat, co je potřeba chránit, co to může ohrozit a jak velké nebezpečí z toho vzniká.</p>
+
+                        <h3>Aktiva</h3>
+                        <p>Aktivum je všechno, co má pro organizaci nějakou hodnotu a co je potřeba chránit. Nemusí jít jen o fyzické věci. V oblasti kyberbezpečnosti jsou aktivem například data, servery, počítače, síťová zařízení, databáze, aplikace, uživatelské účty nebo přístupové údaje. Aktivem ale mohou být i méně viditelné věci, například reputace firmy, know-how, dokumentace nebo dostupnost služby.</p>
+                        <p>Důležité je uvědomit si, že různá aktiva mají různou hodnotu. Například školní web a databáze osobních údajů žáků nejsou stejně citlivé. U některých aktiv je nejdůležitější důvěrnost, u jiných dostupnost nebo správnost dat. Právě proto se aktiva často evidují a rozdělují podle důležitosti.</p>
+
+                        <h3>Pasiva</h3>
+                        <p>Pojem pasivum se v běžné kyberbezpečnostní terminologii nepoužívá tak často jako aktivum, ale ve školním nebo zjednodušeném výkladu se jím může myslet něco, co organizaci zatěžuje, oslabuje nebo zvyšuje riziko. V praxi se tím ale častěji označí spíš slabá místa, závazky, staré systémy nebo neudržovaná infrastruktura, než samostatná bezpečnostní kategorie.</p>
+                        <p>Na web bych to proto formuloval opatrně: v kyberbezpečnosti se většinou pracuje hlavně s aktivy, hrozbami, zranitelnostmi a riziky. Pokud už chceš pojem pasivum zmínit, můžeš ho chápat jako něco, co zvyšuje náklady, složitost nebo bezpečnostní slabiny, například zastaralý server, neaktuální software nebo špatně zdokumentovaný systém.</p>
+
+                        <h3>Hrozby</h3>
+                        <p>Hrozba je něco, co může aktivum poškodit, zneužít nebo ohrozit. Může jít o úmyslný útok, ale i o náhodnou chybu nebo technický problém. Hrozbou tedy není jen hacker nebo malware, ale třeba i výpadek proudu, lidská chyba, ztráta zařízení, požár nebo špatná konfigurace systému.</p>
+                        <p>Příklady hrozeb mohou být:</p>
+                        <ul>
+                            <li>ransomware</li>
+                            <li>phishing</li>
+                            <li>odcizení notebooku</li>
+                            <li>selhání disku</li>
+                            <li>požár serverovny</li>
+                            <li>neoprávněný přístup do systému</li>
+                        </ul>
+                        <p>Hrozba sama o sobě ještě neznamená, že škoda opravdu vznikne. Záleží na tom, jestli existuje nějaká slabina, kterou může využít.</p>
+
+                        <h3>Zranitelnosti</h3>
+                        <p>Zranitelnost je slabé místo v systému, procesu nebo organizaci, které může být zneužito. Může jít například o neopravenou chybu v programu, slabé heslo, otevřený port, špatně nastavená oprávnění nebo nedostatečně proškoleného uživatele. Zranitelnost tedy není útok sama o sobě, ale spíš příležitost, kterou může hrozba využít.</p>
+                        <p>Například:</p>
+                        <p>hrozba: útočník chce získat přístup do účtu — zranitelnost: uživatel má slabé heslo — dopad: dojde k prolomení účtu.</p>
+                        <p>Nebo: hrozba: malware — zranitelnost: zastaralý neopravený software — dopad: napadení zařízení.</p>
+
+                        <h3>Riziko</h3>
+                        <p>Riziko vzniká tehdy, když se spojí cenné aktivum, hrozba a zranitelnost. Jinými slovy: máme něco hodnotného, existuje něco, co to může ohrozit, a zároveň je tu slabina, přes kterou se to může stát. Riziko tedy nepopisuje jen samotnou hrozbu, ale i pravděpodobnost a dopad.</p>
+                        <p>Například databáze zákazníků je cenné aktivum. Pokud je webová aplikace špatně zabezpečená proti SQL injection, jde o zranitelnost. Hrozbou je útočník, který toho využije. Rizikem je pak únik nebo změna dat v databázi.</p>
+
+                        <h3>Řízení rizik</h3>
+                        <p>Řízení rizik znamená, že organizace rizika neignoruje, ale snaží se je systematicky rozpoznat, vyhodnotit a řešit. Nejprve je potřeba zjistit, jaká aktiva organizace má, co je může ohrozit a kde jsou slabá místa. Potom se vyhodnocuje, která rizika jsou nejzávažnější a která je potřeba řešit přednostně.</p>
+                        <p>V praxi řízení rizik obvykle zahrnuje tyto kroky:</p>
+                        <ul>
+                            <li>určení aktiv</li>
+                            <li>určení hrozeb a zranitelností</li>
+                            <li>vyhodnocení pravděpodobnosti a dopadu</li>
+                            <li>výběr opatření</li>
+                            <li>průběžnou kontrolu a aktualizaci</li>
+                        </ul>
+                        <p>Smyslem není odstranit úplně všechna rizika, protože to často ani není možné. Cílem je dostat rizika na přijatelnou úroveň.</p>
+
+                        <h3>Jak se s riziky pracuje</h3>
+                        <p>Na riziko se dá reagovat různými způsoby. Organizace ho může:</p>
+                        <ul>
+                            <li>omezit pomocí bezpečnostních opatření,</li>
+                            <li>přenést například pojištěním nebo smluvně na dodavatele,</li>
+                            <li>vyhnout se mu tím, že určitou činnost nebude dělat,</li>
+                            <li>nebo ho přijmout, pokud je malé a jeho řešení by bylo příliš drahé nebo zbytečné.</li>
+                        </ul>
+                        <p>Například pokud je velkým rizikem ztráta dat, může organizace zavést zálohování. Pokud je rizikem phishing, může zlepšit školení uživatelů a zapnout MFA. Pokud je rizikem starý server, může ho aktualizovat nebo nahradit.</p>
+
+                        <h3>Proč je to důležité</h3>
+                        <p>Bez řízení rizik by organizace často chránila věci náhodně nebo neefektivně. Mohla by investovat čas a peníze do méně důležitých problémů a přehlédnout to, co je opravdu kritické. Právě proto je důležité znát svá aktiva, rozumět hrozbám a odhalovat zranitelnosti. Teprve potom lze rozhodnout, jaká opatření dávají největší smysl.</p>
+
+                        <h3>Shrnutí</h3>
+                        <p>Aktiva jsou věci, které mají hodnotu a je potřeba je chránit. Hrozby představují možné nebezpečí, zranitelnosti jsou slabá místa a riziko vzniká jejich spojením. Řízení rizik pak znamená, že organizace tato rizika rozpoznává, vyhodnocuje a snaží se je snižovat vhodnými opatřeními.</p>
+                </section>
+                <section class="task-panel" id="panel-uloha1">
+                    <p class="task-answer-instruction">Vyber vždy jednu správnou možnost.</p>
+
+                    <p>Co je v kyberbezpečnosti nejspíš aktivum?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber možnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q1" value="a"><span>a) databáze zákazníků</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q1" value="b"><span>b) phishingový e-mail</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q1" value="c"><span>c) slabé heslo</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q1" value="d"><span>d) výpadek proudu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Co je nejspíš hrozba?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber možnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q2" value="a"><span>a) server</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q2" value="b"><span>b) ransomware</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q2" value="c"><span>c) přístupové údaje</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q2" value="d"><span>d) záloha databáze</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Co je nejspíš zranitelnost?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber možnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q3" value="a"><span>a) neopravený systém</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q3" value="b"><span>b) firemní e-mail</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q3" value="c"><span>c) webová aplikace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q3" value="d"><span>d) školní server</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Co nejlépe vystihuje riziko?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Vyber možnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q4" value="a"><span>a) cenné aktivum samo o sobě</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q4" value="b"><span>b) spojení hrozby a slabiny</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q4" value="c"><span>c) seznam všech zaměstnanců</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q4" value="d"><span>d) fyzický počítač v kanceláři</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Která možnost je nejspíš aktivum?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Vyber možnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q5" value="a"><span>a) reputace firmy</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q5" value="b"><span>b) útok brute force</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q5" value="c"><span>c) chyba konfigurace</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p1-q5" value="d"><span>d) malware</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha2">
+                    <p class="task-answer-instruction">V dané situaci urči, co je hrozba a co zranitelnost (nebo slabé místo).</p>
+
+                    <p>Útočník se snaží získat přístup do účtu. Co je zde hrozba?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Rozliš hrozbu a zranitelnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q1" value="a"><span>a) slabé heslo</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q1" value="b"><span>b) útočník</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q1" value="c"><span>c) e-mail uživatele</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q1" value="d"><span>d) monitor správce</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel má heslo firma123. Co je zde zranitelnost?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Rozliš hrozbu a zranitelnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q2" value="a"><span>a) útočník</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q2" value="b"><span>b) slabé heslo</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q2" value="c"><span>c) databáze</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q2" value="d"><span>d) firewall</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Serverovna nemá záložní napájení a dojde k výpadku elektřiny. Co je zde hrozba?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Rozliš hrozbu a zranitelnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q3" value="a"><span>a) výpadek proudu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q3" value="b"><span>b) serverovna</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q3" value="c"><span>c) UPS</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q3" value="d"><span>d) databáze</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Web používá starou verzi aplikace s neopravenou chybou. Co je zde zranitelnost?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Rozliš hrozbu a zranitelnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q4" value="a"><span>a) útočník</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q4" value="b"><span>b) zastaralý software</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q4" value="c"><span>c) zákaznická data</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q4" value="d"><span>d) doména webu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Firma uchovává důležité dokumenty jen na jednom disku bez záloh. Co je zde slabé místo?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="b">
+                        <h3 class="task-answer-title">Rozliš hrozbu a zranitelnost</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q5" value="a"><span>a) záloha</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q5" value="b"><span>b) chybějící redundance</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q5" value="c"><span>c) uživatelský účet</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p2-q5" value="d"><span>d) antivir</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+                <section class="task-panel" id="panel-uloha3">
+                    <p class="task-answer-instruction">Podle popisu situace vyber největší riziko.</p>
+
+                    <p>Firma má databázi zákazníků, webovou aplikaci bez správného ošetření vstupů a útočník zkouší SQL injection. Jaké riziko zde vzniká?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Které riziko je největší?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q1" value="a"><span>a) únik nebo změna dat</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q1" value="b"><span>b) změna tapety</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q1" value="c"><span>c) pomalejší myš</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q1" value="d"><span>d) slabší Wi-Fi</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Uživatel má přístup k citlivým datům a používá velmi slabé heslo. Jaké je největší riziko?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Které riziko je největší?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q2" value="a"><span>a) kompromitace účtu</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q2" value="b"><span>b) špatný tisk</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q2" value="c"><span>c) nižší rozlišení monitoru</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q2" value="d"><span>d) hlučný ventilátor</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Server není zálohovaný a dojde k poruše disku. Jaké riziko je největší?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Které riziko je největší?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q3" value="a"><span>a) ztráta dat</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q3" value="b"><span>b) změna domény</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q3" value="c"><span>c) problém s CSS</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q3" value="d"><span>d) odhlášení z e-mailu</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Guest Wi-Fi není oddělená od interní sítě. Jaké riziko je největší?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Které riziko je největší?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q4" value="a"><span>a) přístup k interním systémům</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q4" value="b"><span>b) delší název sítě</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q4" value="c"><span>c) větší spotřeba toneru</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q4" value="d"><span>d) pomalejší klávesnice</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+
+                    <p>Zaměstnanci nejsou školeni a často klikají na podezřelé přílohy. Jaké riziko je největší?</p>
+                    <div class="task-answer-block task-answer-block--choice" data-correct="a">
+                        <h3 class="task-answer-title">Které riziko je největší?</h3>
+                        <div class="task-answer-header">
+                            <span class="task-answer-label">Odpověď</span>
+                            <span class="task-answer-attempts">2/2</span>
+                        </div>
+                        <div class="task-answer-options">
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q5" value="a"><span>a) napadení zařízení</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q5" value="b"><span>b) větší spotřeba papíru</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q5" value="c"><span>c) ztmavení obrazovky</span></label>
+                            <label class="task-answer-option"><input type="radio" name="task-answer-k16-p3-q5" value="d"><span>d) slabší signál Wi-Fi</span></label>
+                        </div>
+                        <div class="task-answer-row"><button type="button" class="task-answer-submit">Odeslat</button></div>
+                        <p class="task-answer-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/task-tabs.js"></script>
+    <script src="../../assets/task-answer.js"></script>
+</body>
+</html>
